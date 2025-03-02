@@ -6,7 +6,7 @@ class Game: # our class for game running
 	def __init__(self):
 		pygame.init() # initaily
 		self.screen = pygame.display.set_mode((SCREEN_WIDTH,SCREEN_HEIGHT)) # screen size
-		pygame.display.set_caption('Sprout land') # caption
+		pygame.display.set_caption('Farming Simulator') # caption
 		self.clock = pygame.time.Clock() # clock
 		self.level = Level()
 
