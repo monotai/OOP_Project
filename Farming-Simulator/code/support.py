@@ -43,4 +43,4 @@ class SpriteSheet():
                 imagesData[typeSprite] = self.get_images_sheet(data[typeSprite]["pos"], size, data[typeSprite]["frame"]-1, scale)
         
         return imagesData
-
+    

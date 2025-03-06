@@ -3,11 +3,49 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "spring_outdoorsTileSheet.es-ES.tsx",
+    "activeFile": "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "fileStates": {
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Fences.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Grass.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Hills.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/House Decoration.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/House.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Objects.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Paths.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Plant Decoration.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/Water.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/Tilesets/interaction.tsx": {
+            "scaleInDock": 1
+        },
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2472.6666666666665,
+                "y": 1829.9999999999998
+            }
+        },
         "map_0.tmx": {
             "scale": 1.6545833333333333,
             "selectedLayer": 0,
@@ -27,12 +65,14 @@
     "map.tileWidth": 16,
     "openFiles": [
         "spring_outdoorsTileSheet.es-ES.tsx",
-        "map_0.tmx"
+        "map_0.tmx",
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx"
     ],
     "project": "map.tiled-project",
     "recentFiles": [
+        "spring_outdoorsTileSheet.es-ES.tsx",
         "map_0.tmx",
-        "spring_outdoorsTileSheet.es-ES.tsx"
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }

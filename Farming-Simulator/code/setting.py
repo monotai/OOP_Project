@@ -1,7 +1,7 @@
 import pygame
 import json
 
-from sprite import SpriteSheet
+from support import *
 
 try:
     with open("data.json", "r") as file:
@@ -18,6 +18,8 @@ except FileNotFoundError:
 except json.JSONDecodeError:
     print("Error: Invalid JSON format in data files")
     exit(1)
+
+FPS = 60
 
 CAPTION = data["caption"]
 SIZE = data["mapsize"]
@@ -43,3 +45,17 @@ try:
 except KeyError as e:
     print(f"Error: Missing required key in plantsData: {e}")
     exit(1)
+
+LAYERS = {
+	'water': 0,
+	'ground': 1,
+	'soil': 2,
+	'soil water': 3,
+	'rain floor': 4,
+	'house bottom': 5,
+	'ground plant': 6,
+	'main': 7,
+	'house top': 8,
+	'fruit': 9,
+	'rain drops': 10
+}
