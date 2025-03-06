@@ -12,6 +12,8 @@ try:
 
     with open(data["plantsData"], "r") as file:
         plantsData = json.load(file)
+    with open(data["hoeDirtsData"], "r") as file:
+        hoeData = json.load(file)
 except FileNotFoundError:
     print("Error: data.json or map data file not found")
     exit(1)
@@ -34,17 +36,17 @@ BLOCK = pygame.transform.scale(BLOCK, (SQUARE_SIZE + 20, SQUARE_SIZE*2 + 20))
 
 MAP_IMAGE = pygame.image.load(mapData["path"])
 MAP_IMAGE = pygame.transform.scale(MAP_IMAGE, (WIDTH, HEIGHT))
-PLANT_IMAGE = pygame.image.load(plantsData["plant"]["path"])
-PLANT_IMAGE = pygame.transform.scale(PLANT_IMAGE, (SQUARE_SIZE, SQUARE_SIZE))
 
 PLANTS = {}
 
-try:
-    PLANTS_ALL = SpriteSheet(plantsData["plants"]["path"])
-    PLANTS = PLANTS_ALL.get_all_sprites(plantsData["plants"]["data"], plantsData["plants"]["size"], 2)
-except KeyError as e:
-    print(f"Error: Missing required key in plantsData: {e}")
-    exit(1)
+PLANTS_SHEET = SpriteSheet(plantsData["plants"]["path"])
+PLANTS = PLANTS_SHEET.get_all_sprites(plantsData["plants"]["data"], (SQUARE_SIZE, SQUARE_SIZE * 2), plantsData["plants"]["size"])
+
+HOE_DIRTS = {}
+
+# DIRT_SPRITE_SHEET = SpriteSheet(hoeData["path"])
+# HOE_DIRTS["small"] = DIRT_SPRITE_SHEET.get_all_sprites(he)
+
 
 LAYERS = {
 	'water': 0,

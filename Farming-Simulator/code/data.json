@@ -6,5 +6,7 @@
 
     "plantsData": "../graphics/Plants/plants.json",
 
-    "blockPath": "../graphics/Other/block.png"
+    "blockPath": "../graphics/Other/block.png",
+
+    "hoeDirtsData": "../graphics/Other/hoeDirt.json"
 }

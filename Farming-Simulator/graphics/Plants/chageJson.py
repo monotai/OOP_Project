@@ -15,7 +15,7 @@ for i in range(2):
             k += 1
             data["plants"]["data"][f"{k}"] = {}
             data["plants"]["data"][f"{k}"]["pos"] = [i * 128, j * 32]
-            data["plants"]["data"][f"{k}"]["frame"] = data["crops"]["frames"][i][j]
+            data["plants"]["data"][f"{k}"]["frames"] = [data["crops"]["frames"][i][j], 1]
 
 # 3. Write the changes back to the JSON file
 with open(file_path, "w") as file:

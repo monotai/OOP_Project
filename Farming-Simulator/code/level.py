@@ -1,4 +1,5 @@
 import pygame
+from pygame import mixer
 
 from setting import *
 from sprites import *
@@ -16,22 +17,31 @@ class Level:
 
 		self.timer = Timer(1000)
 		self.timer.activate()
+		self.mouse_pressed = False
 
 		self.board = BOARD
+
+		pygame.mixer.music.load('../audio/best_music.mp3')
+		pygame.mixer.music.set_volume(0.05)
+		pygame.mixer.music.play(-1, 0.0, 0)
+
+		self.plantSound = pygame.mixer.Sound('../audio/plant.wav')
+		self.plantSound.set_volume(0.01)
+
+		self.hoeSound = pygame.mixer.Sound('../audio/hoe.wav')
+		self.hoeSound.set_volume(0.01)
 		
 	def mark_square(self, row, col, player):
 		self.board[row][col] = player
 
 	def available_square(self, row, col):
-		return self.board[row][col] == 0
-
-	def draw_figures(self):
-		for row in range(BOARD_ROWS):
-			for col in range(BOARD_COLS):
-				if str(self.board[row][col]).find("p") != -1:
-					num = int(self.board[row][col].replace("p_", ""))
-					self.surface.blit(PLANTS[f"{num}"][0], ((col) * SQUARE_SIZE, (row - 1) * SQUARE_SIZE))
-
+		return 0 <= row < BOARD_ROWS and 0 <= col < BOARD_COLS and self.board[row][col] == 0
+	
+	def find_sprite_at_position(self, group, position):
+		for plant in group:
+			if plant.rect[0] == position[0] and plant.rect[1] == position[1]:
+				return plant
+		return None
 
 	def input(self):
 		keys = pygame.key.get_pressed()
@@ -50,7 +60,8 @@ class Level:
 					self.plantNum = len(PLANTS)
 				self.last_key_time = current_time
 
-		if mouse[0]:
+		if mouse[0] and not self.mouse_pressed:
+			self.mouse_pressed = True
 			pos = pygame.mouse.get_pos()
 			mouseX = pos[0]
 			mouseY = pos[1]
@@ -58,10 +69,22 @@ class Level:
 			clicked_row = mouseY // SQUARE_SIZE
 			clicked_col = mouseX // SQUARE_SIZE
 
+			posSripte = ((clicked_col) * SQUARE_SIZE, (clicked_row - 1) * SQUARE_SIZE)
+
 			if self.available_square(clicked_row, clicked_col):
+				self.plantSound.play()
 				self.mark_square(clicked_row, clicked_col, f'p_{self.plantNum}')
-				plant = Plant(((clicked_col) * SQUARE_SIZE, (clicked_row - 1) * SQUARE_SIZE), self.plantNum)
+				plant = Plant(posSripte, self.plantNum)
 				self.all_plants.add(plant)
+			else:
+				sprite = self.find_sprite_at_position(self.all_plants, posSripte)
+				if sprite is not None and (sprite.maxFrames == sprite.frame + 1):
+					self.hoeSound.play()
+					self.mark_square(clicked_row, clicked_col, 0)
+					sprite.kill()
+		elif not mouse[0]:
+			self.mouse_pressed = False
+
 
 	def run(self):
 		self.surface.fill('black')
