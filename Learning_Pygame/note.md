@@ -50,16 +50,22 @@ pygame.diplay.get_surface()
 ## sprite.Group
 
 ```
+pygame.sprite.Sprite
 block = pygame.sprite.Group()
 block.sprites()
 for block in blocks:
 	block.rect
 ```
 
-## sprite.Sprite
+## [Multiple Sprites](https://youtu.be/4TfZjhw0J-8?si=wmeI0XqT8tZHvFJM)
+
+[more](http://www.codingwithruss.com/pygame/sprite-class-and-sprite-groups-explained/)
+
+when we want to manag many sprite we 
 
 ```
-pygame.sprite.Sprite
+
+
 
 ```
 

@@ -1,3 +1,4 @@
+
 import json
 
 month_table = {
@@ -34,10 +35,19 @@ def convert_price(price):
 def convert_harvest_time(harvest_time):
     if harvest_time == "Continuous harvest":
         return "Continuous"
-    if 'week' in harvest_time:
-        return int(harvest_time.split(' ')[0])
+    elif 'week' in harvest_time:
+        return [int(x) for x in harvest_time.split(' ')[0].split('-')]
     elif 'month' in harvest_time:
-        return int(harvest_time.split(' ')[0]) * 4
+        try:
+            months = [int(x) for x in harvest_time.split(' ')[0].split('-')]
+            return [month * 4 for month in months]
+        except ValueError:
+            return harvest_time
+    else:
+        try:
+            return [int(x) for x in harvest_time.split('-')]
+        except ValueError:
+            return harvest_time
 
 data = [
     {
@@ -186,5 +196,5 @@ data = [
     }
 ]
 
-with open('/d:/Learn Year 2/OOP_Project/vegetables.json', 'w') as json_file:
+with open('d:/Learn Year 2/OOP_Project/vegetables.json', 'w') as json_file:
     json.dump(data, json_file, indent=4)

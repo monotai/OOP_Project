@@ -1,3 +1,4 @@
+```python
 import json
 
 month_table = {
@@ -32,8 +33,6 @@ def convert_price(price):
     return [float(x) for x in price.split(' - ')]
 
 def convert_harvest_time(harvest_time):
-    if harvest_time == "Continuous harvest":
-        return "Continuous"
     if 'week' in harvest_time:
         return int(harvest_time.split(' ')[0])
     elif 'month' in harvest_time:
@@ -188,3 +187,4 @@ data = [
 
 with open('/d:/Learn Year 2/OOP_Project/vegetables.json', 'w') as json_file:
     json.dump(data, json_file, indent=4)
+```

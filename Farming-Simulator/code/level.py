@@ -22,14 +22,14 @@ class Level:
 		self.board = BOARD
 
 		pygame.mixer.music.load('../audio/best_music.mp3')
-		pygame.mixer.music.set_volume(0.05)
+		pygame.mixer.music.set_volume(0.5)
 		pygame.mixer.music.play(-1, 0.0, 0)
 
 		self.plantSound = pygame.mixer.Sound('../audio/plant.wav')
-		self.plantSound.set_volume(0.01)
+		self.plantSound.set_volume(0.1)
 
 		self.hoeSound = pygame.mixer.Sound('../audio/hoe.wav')
-		self.hoeSound.set_volume(0.01)
+		self.hoeSound.set_volume(0.1)
 		
 	def mark_square(self, row, col, player):
 		self.board[row][col] = player

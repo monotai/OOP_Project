@@ -1,0 +1,180 @@
+{
+    "Vegetables": [
+        {
+            "Vegetable Name": "Morning Glory (Trakuon)",
+            "Planting Season": [1, 12, "m"],
+            "Harvest Time": [1, 2, "m"],
+            "Growth Duration": [2, 3, "m"],
+            "Price per KG (USD)": [1.00, 1.50],
+            "Is Continuous": true,
+            "Notes": "Fast-growing, grows in water"
+        },
+        {
+            "Vegetable Name": "Bok Choy (Pak Choi)",
+            "Planting Season": [11, 3, "m"],
+            "Harvest Time": [1, 2, "m"],
+            "Growth Duration": [1, 2, "m"],
+            "Price per KG (USD)": [1.20, 1.60],
+            "Is Continuous": false,
+            "Notes": "Needs irrigation in dry season"
+        },
+        {
+            "Vegetable Name": "Chinese Cabbage",
+            "Planting Season": [11, 2, "m"],
+            "Harvest Time": [2, 3, "m"],
+            "Growth Duration": [1, 2, "m"],
+            "Price per KG (USD)": [1.50, 2.00],
+            "Is Continuous": false,
+            "Notes": "Cooler season crop"
+        },
+        {
+            "Vegetable Name": "Tomatoes",
+            "Planting Season": [11, 3, "m"],
+            "Harvest Time": [2, 3, "m"],
+            "Growth Duration": [2, 3, "m"],
+            "Price per KG (USD)": [1.20, 1.80],
+            "Is Continuous": true,
+            "Notes": "Requires irrigation"
+        },
+        {
+            "Vegetable Name": "Green Beans",
+            "Planting Season": [11, 2, "m"],
+            "Harvest Time": [2, 3, "m"],
+            "Growth Duration": [2, 2, "m"],
+            "Price per KG (USD)": [1.50, 2.00],
+            "Is Continuous": true,
+            "Notes": "Grows well in dry conditions"
+        },
+        {
+            "Vegetable Name": "Cucumbers",
+            "Planting Season": [11, 3, "m"],
+            "Harvest Time": [1, 2, "m"],
+            "Growth Duration": [1, 2, "m"],
+            "Price per KG (USD)": [0.80, 1.20],
+            "Is Continuous": true,
+            "Notes": "Needs trellis support"
+        },
+        {
+            "Vegetable Name": "Chili Peppers",
+            "Planting Season": [11, 4, "m"],
+            "Harvest Time": [2, 3, "m"],
+            "Growth Duration": [2, 3, "m"],
+            "Price per KG (USD)": [1.50, 2.50],
+            "Is Continuous": true,
+            "Notes": "Requires controlled watering"
+        },
+        {
+            "Vegetable Name": "Eggplant (Trorlong)",
+            "Planting Season": [1, 12, "m"],
+            "Harvest Time": [2, 3, "m"],
+            "Growth Duration": [3, 4, "m"],
+            "Price per KG (USD)": [1.50, 2.00],
+            "Is Continuous": true,
+            "Notes": "Prefers warm temperatures"
+        },
+        {
+            "Vegetable Name": "Cassava",
+            "Planting Season": [12, 3, "m"],
+            "Harvest Time": [6, 8, "m"],
+            "Growth Duration": [6, 9, "m"],
+            "Price per KG (USD)": [0.70, 1.00],
+            "Is Continuous": false,
+            "Notes": "Drought-resistant"
+        },
+        {
+            "Vegetable Name": "Sweet Potatoes",
+            "Planting Season": [12, 3, "m"],
+            "Harvest Time": [3, 5, "m"],
+            "Growth Duration": [3, 5, "m"],
+            "Price per KG (USD)": [1.00, 1.50],
+            "Is Continuous": false,
+            "Notes": "Requires little water"
+        },
+        {
+            "Vegetable Name": "Corn",
+            "Planting Season": [12, 2, "m"],
+            "Harvest Time": [2, 3, "m"],
+            "Growth Duration": [2, 3, "m"],
+            "Price per KG (USD)": [0.80, 1.20],
+            "Is Continuous": false,
+            "Notes": "Needs irrigation"
+        },
+        {
+            "Vegetable Name": "Mango",
+            "Planting Season": [12, 1, "m"],
+            "Harvest Time": [3, 5, "m"],
+            "Growth Duration": [3, 5, "m"],
+            "Price per KG (USD)": [1.50, 3.00],
+            "Is Continuous": false,
+            "Notes": "Peak fruit season"
+        },
+        {
+            "Vegetable Name": "Banana",
+            "Planting Season": [1, 12, "m"],
+            "Harvest Time": [1, 12, "m"],
+            "Growth Duration": [4, 6, "m"],
+            "Price per KG (USD)": [0.50, 1.00],
+            "Is Continuous": true,
+            "Notes": "Grows well in dry season"
+        },
+        {
+            "Vegetable Name": "Papaya",
+            "Planting Season": [1, 12, "m"],
+            "Harvest Time": [6, 9, "m"],
+            "Growth Duration": [6, 9, "m"],
+            "Price per KG (USD)": [0.90, 1.30],
+            "Is Continuous": true,
+            "Notes": "High demand for green papaya"
+        },
+        {
+            "Vegetable Name": "Lemongrass",
+            "Planting Season": [1, 12, "m"],
+            "Harvest Time": [7, 9, "m"],
+            "Growth Duration": [8, 10, "m"],
+            "Price per KG (USD)": [0.50, 0.80],
+            "Is Continuous": true,
+            "Notes": "Drought-tolerant"
+        },
+        {
+            "Vegetable Name": "Kaffir Lime Leaves",
+            "Planting Season": [1, 12, "m"],
+            "Harvest Time": [7, 9, "m"],
+            "Growth Duration": [8, 10, "m"],
+            "Price per KG (USD)": [0.50, 0.80],
+            "Is Continuous": true,
+            "Notes": "Used in cooking"
+        },
+        {
+            "Vegetable Name": "Peanuts",
+            "Planting Season": [11, 2, "m"],
+            "Harvest Time": [3, 4, "m"],
+            "Growth Duration": [3, 4, "m"],
+            "Price per KG (USD)": [1.20, 1.60],
+            "Is Continuous": false,
+            "Notes": "Requires well-drained soil"
+        },
+        {
+            "Vegetable Name": "Taro",
+            "Planting Season": [12, 3, "m"],
+            "Harvest Time": [6, 9, "m"],
+            "Growth Duration": [6, 9, "m"],
+            "Price per KG (USD)": [1.50, 2.50],
+            "Is Continuous": false,
+            "Notes": "Grows near water sources"
+        }
+    ],
+    "Month": {
+        "1": "Jan",
+        "2": "Feb",
+        "3": "Mar",
+        "4": "Apr",
+        "5": "May",
+        "6": "Jun",
+        "7": "Jul",
+        "8": "Aug",
+        "9": "Sep",
+        "10": "Oct",
+        "11": "Nov",
+        "12": "Dec"
+    }
+}
