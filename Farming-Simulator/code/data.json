@@ -2,11 +2,14 @@
     "caption": "Farming Simulator",
     "mapsize": 2,
     "squarSize": 32,
-    "mapData": "../graphics/Map/map_0.json",
+    "mapData": "../data/map_0.json",
 
     "plantsData": "../graphics/Plants/plants.json",
 
     "blockPath": "../graphics/Other/block.png",
 
-    "hoeDirtsData": "../graphics/Other/hoeDirt.json"
+    "hoeDirtsData": "../graphics/Other/hoeDirt.json",
+
+    "Plants_Data_Stradew": "../data/Plant_Stardew.json",
+    "Money_Image": "../graphics/money.png"
 }

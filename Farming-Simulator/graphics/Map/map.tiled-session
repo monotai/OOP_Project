@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx",
+    "activeFile": "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -42,16 +42,33 @@
             "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2472.6666666666665,
-                "y": 1829.9999999999998
+                "x": 1600.6666666666665,
+                "y": 1280.6666666666665
             }
+        },
+        "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx": {
+            "scale": 0.5145833333333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 383.8056680161944,
+                "y": 255.54655870445345
+            }
+        },
+        "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx#1": {
+            "scaleInDock": 1
+        },
+        "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx#2": {
+            "scaleInDock": 1
+        },
+        "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx#Paths": {
+            "scaleInDock": 1
         },
         "map_0.tmx": {
             "scale": 1.6545833333333333,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 240.24175270712666,
-                "y": 159.85897758750946
+                "x": 229.36288088642658,
+                "y": 174.9685217829262
             }
         },
         "spring_outdoorsTileSheet.es-ES.tsx": {
@@ -66,13 +83,15 @@
     "openFiles": [
         "spring_outdoorsTileSheet.es-ES.tsx",
         "map_0.tmx",
-        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx"
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx",
+        "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx"
     ],
     "project": "map.tiled-project",
     "recentFiles": [
         "spring_outdoorsTileSheet.es-ES.tsx",
         "map_0.tmx",
-        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx"
+        "D:/Learn Year  2/Term 2/work/OOP_Project/PyDew-Valley-main/s23 - Audio & fixes/data/map.tmx",
+        "D:/SteamLibrary/steamapps/common/Stardew Valley/Content (unpacked)/Maps/SeedShop.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }

@@ -1,0 +1,1341 @@
+{
+    "Items_image": {
+        "path": "../graphics/Plants/Image/springobjects.png",
+        "size": [
+            384,
+            624
+        ],
+        "sprite_size": [
+            16,
+            16
+        ]
+    },
+    "Crops_Image": {
+        "path": "../graphics/Plants/Image/crops.png",
+        "size": [
+            256,
+            1024
+        ],
+        "sprite_size": [
+            16,
+            32
+        ],
+        "type": 2
+    },
+    "Crops": {
+        "472": {
+            "SpriteIndex_Crop": 0,
+            "SpriteIndex_Seed": 472,
+            "Name": "Parsnip Seeds",
+            "Price": 10,
+            "HarvestItemId": "24",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 35,
+            "HarvestName": "Parsnip"
+        },
+        "473": {
+            "SpriteIndex_Crop": 1,
+            "SpriteIndex_Seed": 473,
+            "Name": "Bean Starter",
+            "Price": 30,
+            "HarvestItemId": "188",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                3,
+                4
+            ],
+            "Frames": 8,
+            "RegrowDays": 3,
+            "TintColors": [],
+            "HarvestPrice": 40,
+            "HarvestName": "Green Bean"
+        },
+        "474": {
+            "SpriteIndex_Crop": 2,
+            "SpriteIndex_Seed": 474,
+            "Name": "Cauliflower Seeds",
+            "Price": 40,
+            "HarvestItemId": "190",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                4,
+                4,
+                1
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 175,
+            "HarvestName": "Cauliflower"
+        },
+        "475": {
+            "SpriteIndex_Crop": 3,
+            "SpriteIndex_Seed": 475,
+            "Name": "Potato Seeds",
+            "Price": 25,
+            "HarvestItemId": "192",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                2,
+                1
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 80,
+            "HarvestName": "Potato"
+        },
+        "476": {
+            "SpriteIndex_Crop": 4,
+            "SpriteIndex_Seed": 476,
+            "Name": "Garlic Seeds",
+            "Price": 20,
+            "HarvestItemId": "248",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 60,
+            "HarvestName": "Garlic"
+        },
+        "273": {
+            "SpriteIndex_Crop": 34,
+            "SpriteIndex_Seed": 273,
+            "Name": "Rice Shoot",
+            "Price": 20,
+            "HarvestItemId": "271",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                3
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 30,
+            "HarvestName": "Unmilled Rice"
+        },
+        "831": {
+            "SpriteIndex_Crop": 42,
+            "SpriteIndex_Seed": 831,
+            "Name": "Taro Tuber",
+            "Price": 20,
+            "HarvestItemId": "830",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 100,
+            "HarvestName": "Taro Root"
+        },
+        "477": {
+            "SpriteIndex_Crop": 5,
+            "SpriteIndex_Seed": 477,
+            "Name": "Kale Seeds",
+            "Price": 35,
+            "HarvestItemId": "250",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 110,
+            "HarvestName": "Kale"
+        },
+        "478": {
+            "SpriteIndex_Crop": 6,
+            "SpriteIndex_Seed": 478,
+            "Name": "Rhubarb Seeds",
+            "Price": 50,
+            "HarvestItemId": "252",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                2,
+                2,
+                2,
+                3,
+                4
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 220,
+            "HarvestName": "Rhubarb"
+        },
+        "745": {
+            "SpriteIndex_Crop": 36,
+            "SpriteIndex_Seed": 745,
+            "Name": "Strawberry Seeds",
+            "Price": 0,
+            "HarvestItemId": "400",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                2,
+                2,
+                2
+            ],
+            "Frames": 8,
+            "RegrowDays": 4,
+            "TintColors": [],
+            "HarvestPrice": 120,
+            "HarvestName": "Strawberry"
+        },
+        "479": {
+            "SpriteIndex_Crop": 7,
+            "SpriteIndex_Seed": 479,
+            "Name": "Melon Seeds",
+            "Price": 40,
+            "HarvestItemId": "254",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                3,
+                3,
+                3
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 250,
+            "HarvestName": "Melon"
+        },
+        "480": {
+            "SpriteIndex_Crop": 8,
+            "SpriteIndex_Seed": 480,
+            "Name": "Tomato Seeds",
+            "Price": 25,
+            "HarvestItemId": "256",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                2,
+                2,
+                2,
+                2,
+                3
+            ],
+            "Frames": 8,
+            "RegrowDays": 4,
+            "TintColors": [],
+            "HarvestPrice": 60,
+            "HarvestName": "Tomato"
+        },
+        "481": {
+            "SpriteIndex_Crop": 9,
+            "SpriteIndex_Seed": 481,
+            "Name": "Blueberry Seeds",
+            "Price": 40,
+            "HarvestItemId": "258",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                3,
+                3,
+                4,
+                2
+            ],
+            "Frames": 8,
+            "RegrowDays": 4,
+            "TintColors": [],
+            "HarvestPrice": 50,
+            "HarvestName": "Blueberry"
+        },
+        "482": {
+            "SpriteIndex_Crop": 10,
+            "SpriteIndex_Seed": 482,
+            "Name": "Pepper Seeds",
+            "Price": 20,
+            "HarvestItemId": "260",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 8,
+            "RegrowDays": 3,
+            "TintColors": [],
+            "HarvestPrice": 40,
+            "HarvestName": "Hot Pepper"
+        },
+        "483": {
+            "SpriteIndex_Crop": 11,
+            "SpriteIndex_Seed": 483,
+            "Name": "Wheat Seeds",
+            "Price": 5,
+            "HarvestItemId": "262",
+            "Seasons": [
+                "Summer",
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 25,
+            "HarvestName": "Wheat"
+        },
+        "484": {
+            "SpriteIndex_Crop": 12,
+            "SpriteIndex_Seed": 484,
+            "Name": "Radish Seeds",
+            "Price": 20,
+            "HarvestItemId": "264",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                2,
+                1,
+                2,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 90,
+            "HarvestName": "Radish"
+        },
+        "485": {
+            "SpriteIndex_Crop": 13,
+            "SpriteIndex_Seed": 485,
+            "Name": "Red Cabbage Seeds",
+            "Price": 50,
+            "HarvestItemId": "266",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                2,
+                1,
+                2,
+                2,
+                2
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 260,
+            "HarvestName": "Red Cabbage"
+        },
+        "486": {
+            "SpriteIndex_Crop": 14,
+            "SpriteIndex_Seed": 486,
+            "Name": "Starfruit Seeds",
+            "Price": 200,
+            "HarvestItemId": "268",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                2,
+                3,
+                2,
+                3,
+                3
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 750,
+            "HarvestName": "Starfruit"
+        },
+        "833": {
+            "SpriteIndex_Crop": 43,
+            "SpriteIndex_Seed": 833,
+            "Name": "Pineapple Seeds",
+            "Price": 240,
+            "HarvestItemId": "832",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                3,
+                3,
+                4,
+                3
+            ],
+            "Frames": 8,
+            "RegrowDays": 7,
+            "TintColors": [],
+            "HarvestPrice": 300,
+            "HarvestName": "Pineapple"
+        },
+        "433": {
+            "SpriteIndex_Crop": 40,
+            "SpriteIndex_Seed": 433,
+            "Name": "Coffee Bean",
+            "Price": 15,
+            "HarvestItemId": "433",
+            "Seasons": [
+                "Spring",
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                3,
+                2
+            ],
+            "Frames": 8,
+            "RegrowDays": 2,
+            "TintColors": [],
+            "HarvestPrice": 15,
+            "HarvestName": "Coffee Bean"
+        },
+        "802": {
+            "SpriteIndex_Crop": 41,
+            "SpriteIndex_Seed": 802,
+            "Name": "Cactus Seeds",
+            "Price": 0,
+            "HarvestItemId": "90",
+            "Seasons": [
+                "Spring",
+                "Summer",
+                "Fall",
+                "Winter"
+            ],
+            "DaysInPhase": [
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "Frames": 8,
+            "RegrowDays": 3,
+            "TintColors": [],
+            "HarvestPrice": 75,
+            "HarvestName": "Cactus Fruit"
+        },
+        "487": {
+            "SpriteIndex_Crop": 15,
+            "SpriteIndex_Seed": 487,
+            "Name": "Corn Seeds",
+            "Price": 75,
+            "HarvestItemId": "270",
+            "Seasons": [
+                "Summer",
+                "Fall"
+            ],
+            "DaysInPhase": [
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "Frames": 8,
+            "RegrowDays": 4,
+            "TintColors": [],
+            "HarvestPrice": 50,
+            "HarvestName": "Corn"
+        },
+        "302": {
+            "SpriteIndex_Crop": 37,
+            "SpriteIndex_Seed": 302,
+            "Name": "Hops Starter",
+            "Price": 30,
+            "HarvestItemId": "304",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                2,
+                3,
+                4
+            ],
+            "Frames": 8,
+            "RegrowDays": 1,
+            "TintColors": [],
+            "HarvestPrice": 25,
+            "HarvestName": "Hops"
+        },
+        "301": {
+            "SpriteIndex_Crop": 38,
+            "SpriteIndex_Seed": 301,
+            "Name": "Grape Starter",
+            "Price": 30,
+            "HarvestItemId": "398",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "Frames": 8,
+            "RegrowDays": 3,
+            "TintColors": [],
+            "HarvestPrice": 80,
+            "HarvestName": "Grape"
+        },
+        "299": {
+            "SpriteIndex_Crop": 39,
+            "SpriteIndex_Seed": 299,
+            "Name": "Amaranth Seeds",
+            "Price": 35,
+            "HarvestItemId": "300",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                2
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 150,
+            "HarvestName": "Amaranth"
+        },
+        "488": {
+            "SpriteIndex_Crop": 16,
+            "SpriteIndex_Seed": 488,
+            "Name": "Eggplant Seeds",
+            "Price": 10,
+            "HarvestItemId": "272",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 8,
+            "RegrowDays": 5,
+            "TintColors": [],
+            "HarvestPrice": 60,
+            "HarvestName": "Eggplant"
+        },
+        "489": {
+            "SpriteIndex_Crop": 17,
+            "SpriteIndex_Seed": 489,
+            "Name": "Artichoke Seeds",
+            "Price": 15,
+            "HarvestItemId": "274",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                2,
+                2,
+                1,
+                2,
+                1
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 160,
+            "HarvestName": "Artichoke"
+        },
+        "490": {
+            "SpriteIndex_Crop": 18,
+            "SpriteIndex_Seed": 490,
+            "Name": "Pumpkin Seeds",
+            "Price": 50,
+            "HarvestItemId": "276",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                3,
+                4,
+                3
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 320,
+            "HarvestName": "Pumpkin"
+        },
+        "491": {
+            "SpriteIndex_Crop": 19,
+            "SpriteIndex_Seed": 491,
+            "Name": "Bok Choy Seeds",
+            "Price": 25,
+            "HarvestItemId": "278",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 80,
+            "HarvestName": "Bok Choy"
+        },
+        "492": {
+            "SpriteIndex_Crop": 20,
+            "SpriteIndex_Seed": 492,
+            "Name": "Yam Seeds",
+            "Price": 30,
+            "HarvestItemId": "280",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                3,
+                3,
+                3
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 160,
+            "HarvestName": "Yam"
+        },
+        "493": {
+            "SpriteIndex_Crop": 21,
+            "SpriteIndex_Seed": 493,
+            "Name": "Cranberry Seeds",
+            "Price": 120,
+            "HarvestItemId": "282",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                1,
+                1,
+                2
+            ],
+            "Frames": 8,
+            "RegrowDays": 5,
+            "TintColors": [],
+            "HarvestPrice": 75,
+            "HarvestName": "Cranberries"
+        },
+        "494": {
+            "SpriteIndex_Crop": 22,
+            "SpriteIndex_Seed": 494,
+            "Name": "Beet Seeds",
+            "Price": 10,
+            "HarvestItemId": "284",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 100,
+            "HarvestName": "Beet"
+        },
+        "499": {
+            "SpriteIndex_Crop": 24,
+            "SpriteIndex_Seed": 499,
+            "Name": "Ancient Seeds",
+            "Price": 30,
+            "HarvestItemId": "454",
+            "Seasons": [
+                "Spring",
+                "Summer",
+                "Fall"
+            ],
+            "DaysInPhase": [
+                2,
+                7,
+                7,
+                7,
+                5
+            ],
+            "Frames": 8,
+            "RegrowDays": 7,
+            "TintColors": [],
+            "HarvestPrice": 550,
+            "HarvestName": "Ancient Fruit"
+        },
+        "427": {
+            "SpriteIndex_Crop": 26,
+            "SpriteIndex_Seed": 427,
+            "Name": "Tulip Bulb",
+            "Price": 10,
+            "HarvestItemId": "591",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [
+                "#FFBAFF",
+                "#DFBFFF",
+                "#FFF600",
+                "#FF5000",
+                "#FF9EC1"
+            ],
+            "HarvestPrice": 30,
+            "HarvestName": "Tulip"
+        },
+        "429": {
+            "SpriteIndex_Crop": 27,
+            "SpriteIndex_Seed": 429,
+            "Name": "Jazz Seeds",
+            "Price": 15,
+            "HarvestItemId": "597",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                2
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [
+                "#237FFF",
+                "#6D83FF",
+                "#70CFFF",
+                "#BFE4FF",
+                "#5E79FF",
+                "#2896FF"
+            ],
+            "HarvestPrice": 50,
+            "HarvestName": "Blue Jazz"
+        },
+        "453": {
+            "SpriteIndex_Crop": 28,
+            "SpriteIndex_Seed": 453,
+            "Name": "Poppy Seeds",
+            "Price": 50,
+            "HarvestItemId": "376",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                2
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [
+                "Red",
+                "#FEFEFE",
+                "#FFAA00"
+            ],
+            "HarvestPrice": 140,
+            "HarvestName": "Poppy"
+        },
+        "455": {
+            "SpriteIndex_Crop": 29,
+            "SpriteIndex_Seed": 455,
+            "Name": "Spangle Seeds",
+            "Price": 25,
+            "HarvestItemId": "593",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                3,
+                2
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [
+                "#00D0FF",
+                "#63FFD2",
+                "#FFD400",
+                "#FF907A",
+                "#FF00EE",
+                "#CE5BFF"
+            ],
+            "HarvestPrice": 90,
+            "HarvestName": "Summer Spangle"
+        },
+        "431": {
+            "SpriteIndex_Crop": 30,
+            "SpriteIndex_Seed": 431,
+            "Name": "Sunflower Seeds",
+            "Price": 20,
+            "HarvestItemId": "421",
+            "Seasons": [
+                "Summer",
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                3,
+                2
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 80,
+            "HarvestName": "Sunflower"
+        },
+        "425": {
+            "SpriteIndex_Crop": 31,
+            "SpriteIndex_Seed": 425,
+            "Name": "Fairy Seeds",
+            "Price": 100,
+            "HarvestItemId": "595",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                4,
+                4,
+                3
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [
+                "#BB00FF",
+                "#7789FF",
+                "#47E3FF",
+                "#FF7F90",
+                "#CDB2FF",
+                "#8C77FF"
+            ],
+            "HarvestPrice": 290,
+            "HarvestName": "Fairy Rose"
+        },
+        "347": {
+            "SpriteIndex_Crop": 32,
+            "SpriteIndex_Seed": 347,
+            "Name": "Rare Seed",
+            "Price": 200,
+            "HarvestItemId": "417",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                2,
+                4,
+                6,
+                6,
+                6
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 3000,
+            "HarvestName": "Sweet Gem Berry"
+        },
+        "495": {
+            "SpriteIndex_Crop": 23,
+            "SpriteIndex_Seed": 495,
+            "Name": "Spring Seeds",
+            "Price": 35,
+            "HarvestItemId": "16",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                3,
+                4
+            ],
+            "Frames": 4,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 50,
+            "HarvestName": "Wild Horseradish"
+        },
+        "496": {
+            "SpriteIndex_Crop": 23,
+            "SpriteIndex_Seed": 496,
+            "Name": "Summer Seeds",
+            "Price": 55,
+            "HarvestItemId": "396",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                3,
+                4
+            ],
+            "Frames": 4,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 80,
+            "HarvestName": "Spice Berry"
+        },
+        "497": {
+            "SpriteIndex_Crop": 23,
+            "SpriteIndex_Seed": 497,
+            "Name": "Fall Seeds",
+            "Price": 45,
+            "HarvestItemId": "404",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                3,
+                4
+            ],
+            "Frames": 4,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 40,
+            "HarvestName": "Common Mushroom"
+        },
+        "498": {
+            "SpriteIndex_Crop": 23,
+            "SpriteIndex_Seed": 498,
+            "Name": "Winter Seeds",
+            "Price": 30,
+            "HarvestItemId": "412",
+            "Seasons": [
+                "Winter"
+            ],
+            "DaysInPhase": [
+                3,
+                4
+            ],
+            "Frames": 4,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 70,
+            "HarvestName": "Winter Root"
+        },
+        "885": {
+            "SpriteIndex_Crop": 44,
+            "SpriteIndex_Seed": 885,
+            "Name": "Fiber Seeds",
+            "Price": 5,
+            "HarvestItemId": "771",
+            "Seasons": [
+                "Spring",
+                "Summer",
+                "Fall",
+                "Winter"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                2
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 1,
+            "HarvestName": "Fiber"
+        },
+        "890": {
+            "SpriteIndex_Crop": 47,
+            "SpriteIndex_Seed": 890,
+            "Name": "Qi Bean",
+            "Price": 1,
+            "HarvestItemId": "889",
+            "Seasons": [
+                "Spring",
+                "Summer",
+                "Fall",
+                "Winter"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1
+            ],
+            "Frames": 6,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 1,
+            "HarvestName": "Qi Fruit"
+        },
+        "CarrotSeeds": {
+            "SpriteIndex_Crop": 48,
+            "SpriteIndex_Seed": 84,
+            "Name": "Carrot Seeds",
+            "Price": 15,
+            "HarvestItemId": "Carrot",
+            "Seasons": [
+                "Spring"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1
+            ],
+            "Frames": 5,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 35,
+            "HarvestName": "Carrot"
+        },
+        "SummerSquashSeeds": {
+            "SpriteIndex_Crop": 49,
+            "SpriteIndex_Seed": 85,
+            "Name": "Summer Squash Seeds",
+            "Price": 20,
+            "HarvestItemId": "SummerSquash",
+            "Seasons": [
+                "Summer"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                1,
+                2
+            ],
+            "Frames": 8,
+            "RegrowDays": 3,
+            "TintColors": [],
+            "HarvestPrice": 45,
+            "HarvestName": "Summer Squash"
+        },
+        "BroccoliSeeds": {
+            "SpriteIndex_Crop": 50,
+            "SpriteIndex_Seed": 86,
+            "Name": "Broccoli Seeds",
+            "Price": 40,
+            "HarvestItemId": "Broccoli",
+            "Seasons": [
+                "Fall"
+            ],
+            "DaysInPhase": [
+                1,
+                2,
+                2,
+                3
+            ],
+            "Frames": 7,
+            "RegrowDays": 4,
+            "TintColors": [],
+            "HarvestPrice": 70,
+            "HarvestName": "Broccoli"
+        },
+        "PowdermelonSeeds": {
+            "SpriteIndex_Crop": 51,
+            "SpriteIndex_Seed": 87,
+            "Name": "Powdermelon Seeds",
+            "Price": 20,
+            "HarvestItemId": "Powdermelon",
+            "Seasons": [
+                "Winter"
+            ],
+            "DaysInPhase": [
+                1,
+                1,
+                1,
+                2,
+                2
+            ],
+            "Frames": 7,
+            "RegrowDays": -1,
+            "TintColors": [],
+            "HarvestPrice": 60,
+            "HarvestName": "Powdermelon"
+        }
+    },
+    "Harvest": {
+        "24": {
+            "Name": "Parsnip",
+            "Price": 35
+        },
+        "188": {
+            "Name": "Green Bean",
+            "Price": 40
+        },
+        "190": {
+            "Name": "Cauliflower",
+            "Price": 175
+        },
+        "192": {
+            "Name": "Potato",
+            "Price": 80
+        },
+        "248": {
+            "Name": "Garlic",
+            "Price": 60
+        },
+        "271": {
+            "Name": "Unmilled Rice",
+            "Price": 30
+        },
+        "830": {
+            "Name": "Taro Root",
+            "Price": 100
+        },
+        "250": {
+            "Name": "Kale",
+            "Price": 110
+        },
+        "252": {
+            "Name": "Rhubarb",
+            "Price": 220
+        },
+        "400": {
+            "Name": "Strawberry",
+            "Price": 120
+        },
+        "254": {
+            "Name": "Melon",
+            "Price": 250
+        },
+        "256": {
+            "Name": "Tomato",
+            "Price": 60
+        },
+        "258": {
+            "Name": "Blueberry",
+            "Price": 50
+        },
+        "260": {
+            "Name": "Hot Pepper",
+            "Price": 40
+        },
+        "262": {
+            "Name": "Wheat",
+            "Price": 25
+        },
+        "264": {
+            "Name": "Radish",
+            "Price": 90
+        },
+        "266": {
+            "Name": "Red Cabbage",
+            "Price": 260
+        },
+        "268": {
+            "Name": "Starfruit",
+            "Price": 750
+        },
+        "832": {
+            "Name": "Pineapple",
+            "Price": 300
+        },
+        "433": {
+            "Name": "Coffee Bean",
+            "Price": 15
+        },
+        "90": {
+            "Name": "Cactus Fruit",
+            "Price": 75
+        },
+        "270": {
+            "Name": "Corn",
+            "Price": 50
+        },
+        "304": {
+            "Name": "Hops",
+            "Price": 25
+        },
+        "398": {
+            "Name": "Grape",
+            "Price": 80
+        },
+        "300": {
+            "Name": "Amaranth",
+            "Price": 150
+        },
+        "272": {
+            "Name": "Eggplant",
+            "Price": 60
+        },
+        "274": {
+            "Name": "Artichoke",
+            "Price": 160
+        },
+        "276": {
+            "Name": "Pumpkin",
+            "Price": 320
+        },
+        "278": {
+            "Name": "Bok Choy",
+            "Price": 80
+        },
+        "280": {
+            "Name": "Yam",
+            "Price": 160
+        },
+        "282": {
+            "Name": "Cranberries",
+            "Price": 75
+        },
+        "284": {
+            "Name": "Beet",
+            "Price": 100
+        },
+        "454": {
+            "Name": "Ancient Fruit",
+            "Price": 550
+        },
+        "591": {
+            "Name": "Tulip",
+            "Price": 30
+        },
+        "597": {
+            "Name": "Blue Jazz",
+            "Price": 50
+        },
+        "376": {
+            "Name": "Poppy",
+            "Price": 140
+        },
+        "593": {
+            "Name": "Summer Spangle",
+            "Price": 90
+        },
+        "421": {
+            "Name": "Sunflower",
+            "Price": 80
+        },
+        "595": {
+            "Name": "Fairy Rose",
+            "Price": 290
+        },
+        "417": {
+            "Name": "Sweet Gem Berry",
+            "Price": 3000
+        },
+        "16": {
+            "Name": "Wild Horseradish",
+            "Price": 50
+        },
+        "396": {
+            "Name": "Spice Berry",
+            "Price": 80
+        },
+        "404": {
+            "Name": "Common Mushroom",
+            "Price": 40
+        },
+        "412": {
+            "Name": "Winter Root",
+            "Price": 70
+        },
+        "771": {
+            "Name": "Fiber",
+            "Price": 1
+        },
+        "889": {
+            "Name": "Qi Fruit",
+            "Price": 1
+        },
+        "Carrot": {
+            "Name": "Carrot",
+            "Price": 35
+        },
+        "SummerSquash": {
+            "Name": "Summer Squash",
+            "Price": 45
+        },
+        "Broccoli": {
+            "Name": "Broccoli",
+            "Price": 70
+        },
+        "Powdermelon": {
+            "Name": "Powdermelon",
+            "Price": 60
+        }
+    }
+}

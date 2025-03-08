@@ -11,7 +11,7 @@ class Level:
 
 		self.all_plants = pygame.sprite.Group()
 
-		self.plantNum = 1
+		self.plantNum = 0
 		self.last_key_time = 0
 		self.key_cooldown = 200  # milliseconds
 
@@ -20,6 +20,8 @@ class Level:
 		self.mouse_pressed = False
 
 		self.board = BOARD
+
+		self.font = pygame.font.Font(None, 36)
 
 		pygame.mixer.music.load('../audio/best_music.mp3')
 		pygame.mixer.music.set_volume(0.5)
@@ -30,6 +32,8 @@ class Level:
 
 		self.hoeSound = pygame.mixer.Sound('../audio/hoe.wav')
 		self.hoeSound.set_volume(0.1)
+
+		self.money = 0
 		
 	def mark_square(self, row, col, player):
 		self.board[row][col] = player
@@ -42,6 +46,13 @@ class Level:
 			if plant.rect[0] == position[0] and plant.rect[1] == position[1]:
 				return plant
 		return None
+	
+	def get_key_by_index(self):
+		num = self.plantNum
+		for plant_sheet in PLANTS.keys():
+			if num == 0:
+				return plant_sheet
+			num -= 1
 
 	def input(self):
 		keys = pygame.key.get_pressed()
@@ -51,13 +62,13 @@ class Level:
 		if current_time - self.last_key_time > self.key_cooldown:
 			if keys[pygame.K_RIGHT]:
 				self.plantNum += 1
-				if self.plantNum > len(PLANTS):
-					self.plantNum = 1
+				if self.plantNum > len(PLANTS) - 1:
+					self.plantNum = 0
 				self.last_key_time = current_time
 			elif keys[pygame.K_LEFT]:
 				self.plantNum -= 1
-				if self.plantNum < 1:
-					self.plantNum = len(PLANTS)
+				if self.plantNum < 0:
+					self.plantNum = len(PLANTS) - 1
 				self.last_key_time = current_time
 
 		if mouse[0] and not self.mouse_pressed:
@@ -73,15 +84,22 @@ class Level:
 
 			if self.available_square(clicked_row, clicked_col):
 				self.plantSound.play()
-				self.mark_square(clicked_row, clicked_col, f'p_{self.plantNum}')
-				plant = Plant(posSripte, self.plantNum)
+				self.mark_square(clicked_row, clicked_col, self.get_key_by_index())
+				plant = Plant(posSripte, self.get_key_by_index())
 				self.all_plants.add(plant)
 			else:
 				sprite = self.find_sprite_at_position(self.all_plants, posSripte)
-				if sprite is not None and (sprite.maxFrames == sprite.frame + 1):
-					self.hoeSound.play()
-					self.mark_square(clicked_row, clicked_col, 0)
-					sprite.kill()
+				if sprite is not None:
+					
+					if sprite.is_harvest():
+						
+						self.hoeSound.play()
+						self.money += sprite.harvestPrice
+
+						if not sprite.harvest_time():
+							
+							self.mark_square(clicked_row, clicked_col, 0)
+
 		elif not mouse[0]:
 			self.mouse_pressed = False
 
@@ -97,4 +115,7 @@ class Level:
 			self.all_plants.draw(self.surface)
 
 		self.surface.blit(BLOCK, (0, 0))
-		self.surface.blit(PLANTS[f"{self.plantNum}"][0], (10, 10))
+		self.money_text = self.font.render(f'{self.money}', True, (255, 255, 255))
+		self.money_rect = self.money_text.get_rect(topright=(self.surface.get_width() - 10, 10))
+		self.surface.blit(self.money_text, self.money_rect)
+		self.surface.blit(SEED[self.get_key_by_index()][0], (10, 11))
