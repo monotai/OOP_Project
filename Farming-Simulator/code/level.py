@@ -39,7 +39,10 @@ class Level:
 		self.board[row][col] = player
 
 	def available_square(self, row, col):
-		return 0 <= row < BOARD_ROWS and 0 <= col < BOARD_COLS and self.board[row][col] == 0
+		if 0 <= row < BOARD_ROWS and 0 <= col < BOARD_COLS and self.board[row][col] == 0:
+			return True
+		return False
+
 	
 	def find_sprite_at_position(self, group, position):
 		for plant in group:
@@ -85,8 +88,17 @@ class Level:
 			if self.available_square(clicked_row, clicked_col):
 				self.plantSound.play()
 				self.mark_square(clicked_row, clicked_col, self.get_key_by_index())
-				plant = Plant(posSripte, self.get_key_by_index())
+				plant = Plant(posSripte, self.get_key_by_index(), 1)
 				self.all_plants.add(plant)
+
+				if not self.available_square(clicked_row + 1, clicked_col):
+					sprite = self.find_sprite_at_position(self.all_plants, (posSripte[0], posSripte[1] + SQUARE_SIZE))
+					if sprite is not None:
+						plant = Plant(sprite.pos, sprite.key, sprite.frame)
+						sprite.kill()
+						self.all_plants.add(plant)
+
+					
 			else:
 				sprite = self.find_sprite_at_position(self.all_plants, posSripte)
 				if sprite is not None:

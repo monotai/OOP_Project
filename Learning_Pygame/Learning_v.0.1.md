@@ -27,7 +27,9 @@
   screen = pygame.display.set_mode((1024, 768))
   pygame.display.set_caption("New Pygame Window")
   ```
+
 [Save Game Ratio](https://www.youtube.com/watch?v=A_vL_sj0l_U)
+
 - Background Color
 
   ```python
@@ -347,3 +349,5 @@
   ```
 
   [5 game in Python](https://www.youtube.com/watch?v=8OMghdHP-zs)
+
+  [Home Screen](https://www.youtube.com/watch?v=GMBqjxcKogA&t=84s)

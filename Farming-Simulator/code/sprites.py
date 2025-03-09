@@ -3,12 +3,13 @@ import pygame
 from setting import *
 
 class Plant(pygame.sprite.Sprite):
-    def __init__(self, pos, key):
+    def __init__(self, pos, key, frame):
         pygame.sprite.Sprite.__init__(self)
+        self.key = key
         self.pos = pos
         self.images = PLANTS[key]
         self.maxFrames = len(self.images)
-        self.frame = 1
+        self.frame = frame
         self.rect = self.images[self.frame].get_rect(topleft=pos)
         self.image = self.images[self.frame]
         self.daysInPhase = PLANTS_DATA[key]["DaysInPhase"]
