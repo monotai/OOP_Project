@@ -62,3 +62,58 @@ class Plant(pygame.sprite.Sprite):
             self.frame += 1
             self.image = self.images[self.frame]
             return True
+        
+
+
+
+class Box(pygame.sprite.Sprite):
+    def __init__(self, groups, pos, size, color):
+        super().__init__(groups)
+        self.image = pygame.Surface(size)
+        self.image.fill(color)
+        self.rect = self.image.get_rect(topleft=pos)
+
+    def set_center(self, center):
+        self.rect.center = center
+
+    def update(self, increase):
+        self.rect.top += increase
+
+    def add_text(self, text, font, color):
+        text_surface = font.render(text, True, color)
+        text_rect = text_surface.get_rect(center=self.rect.center)
+        self.image.blit(text_surface, (self.image.get_width() // 2 - text_rect.width // 2, self.image.get_height() // 2 - text_rect.height // 2))
+
+
+
+class Container(pygame.sprite.Sprite):
+    def __init__(self, groups, pos, size, colour):
+        super().__init__(groups)
+        self.image = pygame.Surface(size)
+        self.colour = colour
+        self.rect = self.image.get_rect(topleft=pos)
+        self.group = pygame.sprite.Group()
+        self.next_child_y = 0
+        self.lenght = 0
+    
+    def set_center(self, center):
+        self.rect.center = center
+
+    def create_child(self, size, color):
+        child_pos = (0, self.next_child_y)
+        Box(self.group, child_pos, size, color)
+        self.lenght += size[1]
+        self.next_child_y += size[1]
+
+    def update(self):
+        self.image.fill(self.colour)
+        self.group.draw(self.image)
+
+    def move(self, increase):
+        if (increase < 0 and self.next_child_y + increase > self.image.get_height()) or (increase > 0 and self.next_child_y < self.lenght) :
+            self.next_child_y += increase
+            self.group.update(increase)
+
+    def close(self):
+        self.group.empty()
+        self.kill()
