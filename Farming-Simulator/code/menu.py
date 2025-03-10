@@ -12,7 +12,11 @@ class Menu:
         self.options = ["Play", "Settings", "Quit"]
         self.selected_option = 0
 
+<<<<<<< HEAD
 
+=======
+        # Load background music
+>>>>>>> 55d5be81647914bb409233cece409c223180121c
         audio_path = os.path.join('..', 'audio', 'best_music.mp3')
         pygame.mixer.music.load(audio_path)
         pygame.mixer.music.play(-1)  

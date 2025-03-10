@@ -1,3 +1,4 @@
+import json
 import pygame
 
 class SpriteSheet():
@@ -111,10 +112,22 @@ def copy_json_by_key(data, copyData, key, copyKey):
 			copyData[typeData][copyKey] = data[typeData][key] 
 	else :
 		for typeData in data.keys():
-			copyData[typeData][copyKey] = data[typeData][key] 
+			copyData[typeData][copyKey] = data[typeData][key]
 
-# def json_insert(data, addData, addKey):
+class FileJson:
+	def __init__(self, path):
+		self.filePath = path
+		self.data = self.read()
+		# for test
+		self.data = {}
 
-# 	for typeData in data.keys():
-# 		if typeData in newData:
-# 			typeData[newkey] = newData[typeData][addKey]
+	def read(self):
+		with open(self.filePath, 'r') as file:
+			data = json.load(file)
+		return data
+
+	def update(self):
+		if len(self.data) > 0:
+			with open(self.filePath, 'w') as file:
+				json.dump(self.data, file, indent=4)
+		else: print("Data is empty!")
