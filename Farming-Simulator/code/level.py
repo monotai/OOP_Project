@@ -42,14 +42,11 @@ class Level:
 		self.menuMode = False
 		self.menuNum = 0
 		self.all_boxs = pygame.sprite.Group()
-		# self.contain = Container(self.all_boxs, (0, 0), (500, 500), (255, 255, 255))
-		# self.contain.set_center(self.center)
-		# self.contain.create_child((500, 200), (255, 0, 0))
-		# self.contain.create_child((500, 200), (0, 255, 0))
-		# self.contain.create_child((500, 200), (0, 0, 255))
-
-		self.box = Box(self.all_boxs, (0, 0), (300, 300), (255, 255, 255))
-		self.box.set_center(self.center)
+		self.contain = Container(self.all_boxs, (0, 0), (500, 500), (255, 255, 255))
+		self.contain.set_center(self.center)
+		self.contain.create_child((500, 200), (255, 0, 0))
+		self.contain.create_child((500, 200), (0, 255, 0))
+		self.contain.create_child((500, 200), (0, 0, 255))
 
 		# work with file
 		self.hasData = False
@@ -108,7 +105,7 @@ class Level:
 				clicked_col = mouseX // SQUARE_SIZE
 
 				posSripte = ((clicked_col) * SQUARE_SIZE, (clicked_row - 1) * SQUARE_SIZE)
-
+				print(clicked_row, clicked_col)
 				# plant
 				name = PLANTS_DATA[self.get_key_by_index()]["Name"]
 				if self.available_square(clicked_row, clicked_col):
@@ -185,8 +182,18 @@ class Level:
 		self.surface.blit(MAP_IMAGE, (0, 0))
 
 		if len(self.all_plants) > 0:
-			if self.timer.update():
-				self.all_plants.update()
+			if not self.timer.update():
+				self.time += 1
+				for plant in self.all_plants:
+					pos = plant.pos
+					plant.update()
+					d = plant.auto_collect()
+					self.money += d[0]
+					if d[1] == 0:
+						pos = (pos[0] // SQUARE_SIZE, pos[1] // SQUARE_SIZE + 1)
+						self.mark_square(pos[1], pos[0], 0)
+					plant.already -= 1
+				self.timer.activate()
 			self.all_plants.draw(self.surface)
 
 		self.surface.blit(BLOCK, (0, 0))
@@ -202,21 +209,6 @@ class Level:
 		self.all_boxs.draw(self.surface)
 
 	def test(self):
-		self.surface.fill('black')
-		self.input()
-		self.surface.blit(MAP_IMAGE, (0, 0))
-
-		if len(self.all_plants) > 0:
-			if self.timer.update():
-				self.all_plants.update()
-				# collect time
-				self.time += 1
-			self.all_plants.draw(self.surface)
-
-		self.surface.blit(BLOCK, (0, 0))
-		self.money_text = self.font.render(f'{self.money}', True, (255, 255, 255))
-		self.money_rect = self.money_text.get_rect(topright=(self.surface.get_width() - 10, 10))
-		self.surface.blit(self.money_text, self.money_rect)
-		self.surface.blit(SEED[self.get_key_by_index()][0], (10, 11))
-		if self.menuMode:
-			self.menu()
+		self.all_boxs.update()
+		
+		self.all_boxs.draw(self.surface)

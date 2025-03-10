@@ -26,7 +26,7 @@ class Plant(pygame.sprite.Sprite):
         if len(self.addColor) > 0:
             self.frameHarvest -= 1
 
-        
+        self.already = 5
 
     def update(self):
         self.phase += 1
@@ -48,7 +48,9 @@ class Plant(pygame.sprite.Sprite):
 
         if self.isGrow and self.frame < self.maxFrames - 1:
             self.frame += 1
+
         self.image = self.images[self.frame]
+
 
     def is_harvest(self):
         return True if (self.frame == self.frameHarvest) else False
@@ -63,8 +65,13 @@ class Plant(pygame.sprite.Sprite):
             self.image = self.images[self.frame]
             return True
         
-
-
+    def auto_collect(self):
+        if self.already <= 0:
+            if self.is_harvest():
+                self.harvest_time()
+                self.already = 5
+                return (self.harvestPrice, self.life)
+        return (0, self.life)
 
 class Box(pygame.sprite.Sprite):
     def __init__(self, groups, pos, size, color):
