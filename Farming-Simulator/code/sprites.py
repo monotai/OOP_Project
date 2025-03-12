@@ -77,6 +77,7 @@ class Box(pygame.sprite.Sprite):
     def __init__(self, groups, pos, size, color):
         super().__init__(groups)
         self.image = pygame.Surface(size)
+        self.color = color
         self.image.fill(color)
         self.rect = self.image.get_rect(topleft=pos)
 
@@ -86,10 +87,16 @@ class Box(pygame.sprite.Sprite):
     def update(self, increase):
         self.rect.top += increase
 
-    def add_text(self, text, font, color):
+    def add_text(self, text, font, color, pos = None):
+        self.image.fill(self.color)
         text_surface = font.render(text, True, color)
-        text_rect = text_surface.get_rect(center=self.rect.center)
-        self.image.blit(text_surface, (self.image.get_width() // 2 - text_rect.width // 2, self.image.get_height() // 2 - text_rect.height // 2))
+        if pos is None:
+            text_rect = text_surface.get_rect(center=(self.rect.center[0] - self.rect.topleft[0], self.rect.center[1] - self.rect.topleft[1]))
+        else:
+            text_rect = text_surface.get_rect(topleft=pos)
+        self.image.blit(text_surface, text_rect)
+
+        
 
 
 
@@ -108,9 +115,15 @@ class Container(pygame.sprite.Sprite):
 
     def create_child(self, size, color):
         child_pos = (0, self.next_child_y)
-        Box(self.group, child_pos, size, color)
+        box = Box(self.group, child_pos, size, color)
         self.lenght += size[1]
         self.next_child_y += size[1]
+        return box 
+
+    def create_with_text(self, size, color, text, font, fontColour, pos = None):
+        box = self.create_child(size, color)
+        box.add_text(text, font, fontColour, pos)
+        return box
 
     def update(self):
         self.image.fill(self.colour)

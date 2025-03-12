@@ -44,10 +44,10 @@ class Level:
 		self.all_boxs = pygame.sprite.Group()
 		self.contain = Container(self.all_boxs, (0, 0), (500, 500), (255, 255, 255))
 		self.contain.set_center(self.center)
-		self.contain.create_child((500, 200), (255, 0, 0))
-		self.contain.create_child((500, 200), (0, 255, 0))
-		self.contain.create_child((500, 200), (0, 0, 255))
-
+		self.timeBox = self.contain.create_with_text((500, 50), (255, 255, 255), "Time", self.font, (0, 0, 0))
+		self.plantBox = self.contain.create_with_text((500, 200), (255, 255, 255), "Plant", self.font, (0, 0, 0), (10, 10))
+		self.harvestBox = self.contain.create_with_text((500, 200), (255, 255, 255), "Harvest", self.font, (0, 0, 0), (10, 10))
+		self.moneyBox = self.contain.create_with_text((500, 50), (255, 255, 255), "Money", self.font, (0, 0, 0))
 		# work with file
 		self.hasData = False
 		self.time = 0
@@ -210,5 +210,5 @@ class Level:
 
 	def test(self):
 		self.all_boxs.update()
-		
+			
 		self.all_boxs.draw(self.surface)
