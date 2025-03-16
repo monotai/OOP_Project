@@ -80,6 +80,8 @@ class Box(pygame.sprite.Sprite):
         self.color = color
         self.image.fill(color)
         self.rect = self.image.get_rect(topleft=pos)
+        self.textGroup = pygame.sprite.Group()
+        self.text_next_y = 0
 
     def set_center(self, center):
         self.rect.center = center
@@ -96,7 +98,14 @@ class Box(pygame.sprite.Sprite):
             text_rect = text_surface.get_rect(topleft=pos)
         self.image.blit(text_surface, text_rect)
 
-        
+    def get_text_by_index(self, index):
+        if len(self.textGroupe) > 0:
+            if index >= 0 and index < len(self.textGroup):
+                num = 0
+                for text in self.textGroup:
+                    if num == index:
+                        return text
+                    num += 1
 
 
 
