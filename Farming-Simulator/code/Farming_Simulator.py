@@ -10,10 +10,10 @@ class Game:
     def __init__(self):
         pygame.init()
 
-        # Center the window
+        
         os.environ['SDL_VIDEO_CENTERED'] = '1'
 
-        # Screen setup
+        
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption(CAPTION)
         self.clock = pygame.time.Clock()
@@ -28,7 +28,7 @@ class Game:
             if choice == "play":
                 self.play_game()
             elif choice == "settings":
-                print("Settings selected")  
+                self.run_settings()
             else:
                 print("Unknown choice")  
 
@@ -43,6 +43,22 @@ class Game:
             self.level.run()
             pygame.display.update()
             self.clock.tick(FPS)
+
+    def run_settings(self):
+        print("Settings menu...")
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                elif event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        return  # Return to the main menu
+
+            
+            self.screen.fill((0, 0, 0))  
+            pygame.display.flip()  
+            self.clock.tick(60)  
 
 if __name__ == '__main__':
     print("Starting game...")  
