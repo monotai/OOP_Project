@@ -2,122 +2,51 @@
     "0": {
         "plant": {
             "Parsnip Seeds": 1
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 23
+        }
     },
     "1": {
         "plant": {
-<<<<<<< HEAD
-            "Parsnip Seeds": 2
-=======
-<<<<<<< HEAD
-            "Parsnip Seeds": 2
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 35
-=======
-            "Parsnip Seeds": 5
->>>>>>> 934311bdeb12752c0754d55023598f2fe0be493c
+            "Parsnip Seeds": 3
         }
->>>>>>> b2c8a451a2bbc45bc6e5f8ca27a5976f94ef68e7
     },
     "2": {
         "plant": {
-<<<<<<< HEAD
-            "Parsnip Seeds": 6
-        }
-    },
-    "3": {
-        "plant": {
-            "Parsnip Seeds": 5
-        }
-    },
-    "4": {
-        "plant": {
-            "Parsnip Seeds": 1
-        }
-    },
-    "6": {
-        "plant": {
-            "Powdermelon Seeds": 2
-        }
-    },
-    "7": {
-        "plant": {
-            "Powdermelon Seeds": 4
+            "Parsnip Seeds": 2
         }
     },
     "8": {
         "plant": {
-            "Powdermelon Seeds": 2
+            "Parsnip Seeds": 1
         }
     },
-    "15": {
-        "plant": {
-            "Broccoli Seeds": 3
-        }
-    },
-    "16": {
-        "plant": {
-            "Broccoli Seeds": 2
-        }
-    },
-    "17": {
-        "plant": {
-            "Broccoli Seeds": 1
-        }
-    },
-    "18": {
-        "plant": {
-            "Broccoli Seeds": 1
-        }
-    },
-    "32": {
-        "harvest": {
-            "Broccoli Seeds": 1,
-            "money": 1985
-        }
-    },
-    "33": {
-        "harvest": {
-            "Broccoli Seeds": 1,
-            "money": 2195
-        }
-    },
-    "36": {
+    "14": {
         "plant": {
             "Parsnip Seeds": 1
         }
     },
-    "39": {
+    "20": {
         "plant": {
             "Bean Starter": 1
-=======
-            "Parsnip Seeds": 1
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 23 
-    },
-    "3": {
-        "plant": {
-<<<<<<< HEAD
-            "Parsnip Seeds": 1
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 45 
-=======
-            "Parsnip Seeds": 2
->>>>>>> 934311bdeb12752c0754d55023598f2fe0be493c
         }
->>>>>>> b2c8a451a2bbc45bc6e5f8ca27a5976f94ef68e7
+    },
+    "21": {
+        "plant": {
+            "Bean Starter": 2
+        }
+    },
+    "22": {
+        "plant": {
+            "Bean Starter": 1
+        }
+    },
+    "42": {
+        "plant": {
+            "Cauliflower Seeds": 1
+        }
+    },
+    "43": {
+        "plant": {
+            "Cauliflower Seeds": 2
+        }
     }
 }
