@@ -77,6 +77,15 @@ class Level:
 				return plant_sheet
 			num -= 1
 
+	def init_plant_data(self):
+		if self.dataFile.data.get(f"{self.time}") is None:
+			self.dataFile.data[f"{self.time}"] = {"plant": {}, "harvest": {}, "money": self.money}
+		else : self.dataFile.data[f"{self.time}"]["money"] = self.money
+		if self.dataFile.data.get(f"{self.time - 1}") is not None:
+			if self.dataFile.data[f"{self.time}"]["plant"] == {} and self.dataFile.data[f"{self.time}"]["harvest"] == {}:
+				self.dataFile.data.pop(f"{self.time - 1}")
+			else: self.dataFile.data[f"{self.time - 1}"]["money"] = self.money
+
 	def add_plant_data(self, name):
 		if name is not None:
 			if self.dataFile.data.get(f"{self.time}") is None:
@@ -140,12 +149,12 @@ class Level:
 				print(clicked_row, clicked_col)
 				# plant
 				name = PLANTS_DATA[self.get_key_by_index()]["Name"]
+				self.init_plant_data()
 				if self.available_square(clicked_row, clicked_col):
 					self.plantSound.play()
 					self.mark_square(clicked_row, clicked_col, self.get_key_by_index())
 					plant = Plant(posSripte, self.get_key_by_index(), 1)
 					self.all_plants.add(plant)
-
 					# input to file
 					self.add_plant_data(name)
 					self.hasData = True
@@ -217,7 +226,7 @@ class Level:
 			self.box.add_text(f"{information}", self.font, (0, 0, 0))
 		self.all_boxs.draw(self.surface)
 
-	def get_item_json_by_index(self, jsonFile, index)
+	def get_item_json_by_index(self, jsonFile, index):
 		now = 0
 		for item in jsonFile.items():
 			if now == index:
@@ -225,31 +234,31 @@ class Level:
 			now += 1
 
 	def test(self):
-		if not self.press.update():
-			key = pygame.key.get_pressed
+		# if not self.press.update():
+		# 	key = pygame.key.get_pressed()
 
-			if key[pygame.K_RIGHT]:
-				self.dataIndex += 1
-				if self.dataIndex > len(self.dataFile) - 1:
-					self.dataIndex = 0
-			elif key[pygame.K_LEFT]:
-				self.dataIndex -= 1
-				if self.dataIndex < 0:
-					self.dataIndex = len(self.dataFile) - 1
-		dataShow = self.get_item_json_by_index(self.dataFile, self.dataIndex)
-		self.plantBox.add_text()
+		# 	if key[pygame.K_RIGHT]:
+		# 		self.dataIndex += 1
+		# 		if self.dataIndex > len(self.dataFile) - 1:
+		# 			self.dataIndex = 0
+		# 	elif key[pygame.K_LEFT]:
+		# 		self.dataIndex -= 1
+		# 		if self.dataIndex < 0:
+		# 			self.dataIndex = len(self.dataFile) - 1
+		# dataShow = self.get_item_json_by_index(self.dataFile, self.dataIndex)
+		# self.plantBox.add_text()
 		self.all_boxs.update()
-		# if not self.timer.update():
-		# 	self.time += 1 
-		# 	self.dataFile[f"{self.time}"] = {}
-		# 	self.dataFile[f"{self.time}"]["plant"] = {}
-		# 	self.dataFile[f"{self.time}"]["harverst"] = {}
-		# 	self.dataFile[f"{self.time}"]["money"] = {}
-		# 	self.add_plant_data()
-		# 	self.add_hervest_data()
-		# 	if self.dataFile[f"{self.time}"]["plant"] == {} and self.dataFile[f"{self.time}"]["harverst"] == {}:
-		# 		self.dataFile[f"{self.time}"]["money"] = self.money
+		if not self.timer.update():
+			self.time += 1 
+			self.dataFile[f"{self.time}"] = {}
+			self.dataFile[f"{self.time}"]["plant"] = {}
+			self.dataFile[f"{self.time}"]["harverst"] = {}
+			self.dataFile[f"{self.time}"]["money"] = {}
+			self.add_plant_data()
+			self.add_hervest_data()
+			if self.dataFile[f"{self.time}"]["plant"] == {} and self.dataFile[f"{self.time}"]["harverst"] == {}:
+				self.dataFile[f"{self.time}"]["money"] = self.money
 
-		# 	if self.dataFile[f"{self.time - 1}"]["plant"] == {} and self.dataFile[f"{self.time - 1}"]["harverst"] == {} and self.dataFile[f"{self.time - 1}"]["money"] == {}:
-		# 		self.dataFile.pop(f"{self.time - 1}")
+			if self.dataFile[f"{self.time - 1}"]["plant"] == {} and self.dataFile[f"{self.time - 1}"]["harverst"] == {} and self.dataFile[f"{self.time - 1}"]["money"] == {}:
+				self.dataFile.pop(f"{self.time - 1}")
 		self.all_boxs.draw(self.surface)

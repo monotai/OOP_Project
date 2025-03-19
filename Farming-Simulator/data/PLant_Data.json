@@ -1,48 +1,10 @@
 {
-    "0": {
-        "plant": {
-            "Parsnip Seeds": 1
-        },
+    "5": {
+        "plant": {},
         "harvest": {
-            "Parsnip Seeds": 1
+            "Parsnip Seeds": 1,
+            "money": 0
         },
-        "money": 23
-    },
-    "1": {
-        "plant": {
-<<<<<<< HEAD
-            "Parsnip Seeds": 2
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 35
-=======
-            "Parsnip Seeds": 5
-        }
->>>>>>> b2c8a451a2bbc45bc6e5f8ca27a5976f94ef68e7
-    },
-    "2": {
-        "plant": {
-            "Parsnip Seeds": 1
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 23 
-    },
-    "3": {
-        "plant": {
-<<<<<<< HEAD
-            "Parsnip Seeds": 1
-        },
-        "harvest": {
-            "Parsnip Seeds": 1
-        },
-        "money": 45 
-=======
-            "Parsnip Seeds": 2
-        }
->>>>>>> b2c8a451a2bbc45bc6e5f8ca27a5976f94ef68e7
+        "money": 0
     }
 }
