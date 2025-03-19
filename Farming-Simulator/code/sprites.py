@@ -77,8 +77,11 @@ class Box(pygame.sprite.Sprite):
     def __init__(self, groups, pos, size, color):
         super().__init__(groups)
         self.image = pygame.Surface(size)
+        self.color = color
         self.image.fill(color)
         self.rect = self.image.get_rect(topleft=pos)
+        self.textGroup = pygame.sprite.Group()
+        self.text_next_y = 0
 
     def set_center(self, center):
         self.rect.center = center
@@ -86,10 +89,23 @@ class Box(pygame.sprite.Sprite):
     def update(self, increase):
         self.rect.top += increase
 
-    def add_text(self, text, font, color):
+    def add_text(self, text, font, color, pos = None):
+        self.image.fill(self.color)
         text_surface = font.render(text, True, color)
-        text_rect = text_surface.get_rect(center=self.rect.center)
-        self.image.blit(text_surface, (self.image.get_width() // 2 - text_rect.width // 2, self.image.get_height() // 2 - text_rect.height // 2))
+        if pos is None:
+            text_rect = text_surface.get_rect(center=(self.rect.center[0] - self.rect.topleft[0], self.rect.center[1] - self.rect.topleft[1]))
+        else:
+            text_rect = text_surface.get_rect(topleft=pos)
+        self.image.blit(text_surface, text_rect)
+
+    def get_text_by_index(self, index):
+        if len(self.textGroupe) > 0:
+            if index >= 0 and index < len(self.textGroup):
+                num = 0
+                for text in self.textGroup:
+                    if num == index:
+                        return text
+                    num += 1
 
 
 
@@ -108,9 +124,15 @@ class Container(pygame.sprite.Sprite):
 
     def create_child(self, size, color):
         child_pos = (0, self.next_child_y)
-        Box(self.group, child_pos, size, color)
+        box = Box(self.group, child_pos, size, color)
         self.lenght += size[1]
         self.next_child_y += size[1]
+        return box 
+
+    def create_with_text(self, size, color, text, font, fontColour, pos = None):
+        box = self.create_child(size, color)
+        box.add_text(text, font, fontColour, pos)
+        return box
 
     def update(self):
         self.image.fill(self.colour)

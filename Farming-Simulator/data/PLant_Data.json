@@ -2,15 +2,33 @@
     "0": {
         "plant": {
             "Parsnip Seeds": 1
-        }
+        },
+        "harvest": {
+            "Parsnip Seeds": 1
+        },
+        "money": 23
     },
     "1": {
         "plant": {
+<<<<<<< HEAD
             "Parsnip Seeds": 2
+=======
+<<<<<<< HEAD
+            "Parsnip Seeds": 2
+        },
+        "harvest": {
+            "Parsnip Seeds": 1
+        },
+        "money": 35
+=======
+            "Parsnip Seeds": 5
+>>>>>>> 934311bdeb12752c0754d55023598f2fe0be493c
         }
+>>>>>>> b2c8a451a2bbc45bc6e5f8ca27a5976f94ef68e7
     },
     "2": {
         "plant": {
+<<<<<<< HEAD
             "Parsnip Seeds": 6
         }
     },
@@ -79,6 +97,27 @@
     "39": {
         "plant": {
             "Bean Starter": 1
+=======
+            "Parsnip Seeds": 1
+        },
+        "harvest": {
+            "Parsnip Seeds": 1
+        },
+        "money": 23 
+    },
+    "3": {
+        "plant": {
+<<<<<<< HEAD
+            "Parsnip Seeds": 1
+        },
+        "harvest": {
+            "Parsnip Seeds": 1
+        },
+        "money": 45 
+=======
+            "Parsnip Seeds": 2
+>>>>>>> 934311bdeb12752c0754d55023598f2fe0be493c
         }
+>>>>>>> b2c8a451a2bbc45bc6e5f8ca27a5976f94ef68e7
     }
 }
