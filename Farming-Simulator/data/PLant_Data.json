@@ -4,6 +4,17 @@
             "Parsnip Seeds": 1
         }
     },
+    "5": {
+        "plant": {},
+        "harvest": {
+            "Parsnip Seeds": 1,
+            "money": 0
+        },
+
+        "money": 0
+
+
+    },
     "1": {
         "plant": {
             "Parsnip Seeds": 3
@@ -28,6 +39,7 @@
         "plant": {
             "Bean Starter": 1
         }
+
     },
     "21": {
         "plant": {

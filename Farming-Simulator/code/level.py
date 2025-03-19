@@ -61,10 +61,35 @@ class Level:
     def mark_square(self, row, col, player):
         self.board[row][col] = player
 
+<<<<<<< HEAD
+	def init_plant_data(self):
+		if self.dataFile.data.get(f"{self.time}") is None:
+			self.dataFile.data[f"{self.time}"] = {"plant": {}, "harvest": {}, "money": self.money}
+		else : self.dataFile.data[f"{self.time}"]["money"] = self.money
+		if self.dataFile.data.get(f"{self.time - 1}") is not None:
+			if self.dataFile.data[f"{self.time}"]["plant"] == {} and self.dataFile.data[f"{self.time}"]["harvest"] == {}:
+				self.dataFile.data.pop(f"{self.time - 1}")
+			else: self.dataFile.data[f"{self.time - 1}"]["money"] = self.money
+
+	def add_plant_data(self, name):
+		if name is not None:
+			if self.dataFile.data.get(f"{self.time}") is None:
+				self.dataFile.data[f"{self.time}"] = {"plant": {}}
+				self.dataFile.data[f"{self.time}"]["plant"][name] = 1
+			else:
+				if self.dataFile.data[f"{self.time}"].get("plant") is None:
+					self.dataFile.data[f"{self.time}"]["plant"] = {}
+				if name in self.dataFile.data[f"{self.time}"]["plant"].keys():
+					self.dataFile.data[f"{self.time}"]["plant"][name] += 1
+				else:
+					self.dataFile.data[f"{self.time}"]["plant"][name] = 1
+		self.dataFile.update()
+=======
     def available_square(self, row, col):
         if 0 <= row < BOARD_ROWS and 0 <= col < BOARD_COLS and self.board[row][col] == 0:
             return True
         return False
+>>>>>>> 7c543add6b3391a96557fcd52a1320d888ce0299
 
     def find_sprite_at_position(self, group, position):
         for plant in group:
@@ -98,6 +123,24 @@ class Level:
         frame_rect.height = text_rect.height + 20
         frame_image = pygame.transform.scale(self.block_image, (frame_rect.width, frame_rect.height))
 
+<<<<<<< HEAD
+				posSripte = ((clicked_col) * SQUARE_SIZE, (clicked_row - 1) * SQUARE_SIZE)
+				print(clicked_row, clicked_col)
+				# plant
+				name = PLANTS_DATA[self.get_key_by_index()]["Name"]
+				self.init_plant_data()
+				if self.available_square(clicked_row, clicked_col):
+					self.plantSound.play()
+					self.mark_square(clicked_row, clicked_col, self.get_key_by_index())
+					plant = Plant(posSripte, self.get_key_by_index(), 1)
+					self.all_plants.add(plant)
+					# input to file
+					self.add_plant_data(name)
+					self.hasData = True
+					# fix image
+					if not self.available_square(clicked_row + 1, clicked_col):
+						sprite = self.find_sprite_at_position(self.all_plants, (posSripte[0], posSripte[1] + SQUARE_SIZE))
+=======
         # Position the text and frame to the top right of the crop
         frame_rect.topleft = (position[0], position[1] - frame_rect.height - 30)
         text_rect.center = frame_rect.center
@@ -105,6 +148,7 @@ class Level:
         if draw_frame:
             self.surface.blit(frame_image, frame_rect)
         self.surface.blit(text_surface, text_rect)
+>>>>>>> 7c543add6b3391a96557fcd52a1320d888ce0299
 
     def input(self):
         keys = pygame.key.get_pressed()
@@ -185,6 +229,44 @@ class Level:
                                 else:
                                     self.dataFile.data[f"{self.time}"]["harvest"][name] = 1
 
+<<<<<<< HEAD
+	def get_item_json_by_index(self, jsonFile, index):
+		now = 0
+		for item in jsonFile.items():
+			if now == index:
+				return item
+			now += 1
+
+	def test(self):
+		# if not self.press.update():
+		# 	key = pygame.key.get_pressed()
+
+		# 	if key[pygame.K_RIGHT]:
+		# 		self.dataIndex += 1
+		# 		if self.dataIndex > len(self.dataFile) - 1:
+		# 			self.dataIndex = 0
+		# 	elif key[pygame.K_LEFT]:
+		# 		self.dataIndex -= 1
+		# 		if self.dataIndex < 0:
+		# 			self.dataIndex = len(self.dataFile) - 1
+		# dataShow = self.get_item_json_by_index(self.dataFile, self.dataIndex)
+		# self.plantBox.add_text()
+		self.all_boxs.update()
+		if not self.timer.update():
+			self.time += 1 
+			self.dataFile[f"{self.time}"] = {}
+			self.dataFile[f"{self.time}"]["plant"] = {}
+			self.dataFile[f"{self.time}"]["harverst"] = {}
+			self.dataFile[f"{self.time}"]["money"] = {}
+			self.add_plant_data()
+			self.add_hervest_data()
+			if self.dataFile[f"{self.time}"]["plant"] == {} and self.dataFile[f"{self.time}"]["harverst"] == {}:
+				self.dataFile[f"{self.time}"]["money"] = self.money
+
+			if self.dataFile[f"{self.time - 1}"]["plant"] == {} and self.dataFile[f"{self.time - 1}"]["harverst"] == {} and self.dataFile[f"{self.time - 1}"]["money"] == {}:
+				self.dataFile.pop(f"{self.time - 1}")
+		self.all_boxs.draw(self.surface)
+=======
                             self.dataFile.data[f"{self.time}"]["harvest"]["money"] = self.money
                             self.dataFile.update()
 
@@ -256,3 +338,4 @@ class Level:
         self.all_boxs.update()
         
         self.all_boxs.draw(self.surface)
+>>>>>>> 7c543add6b3391a96557fcd52a1320d888ce0299
