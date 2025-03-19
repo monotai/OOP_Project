@@ -82,12 +82,6 @@ class Level:
     def get_crop_name_by_index(self):
         return PLANTS_DATA[self.get_key_by_index()]["Name"]
 
-    def get_crop_name_at_position(self, position):
-        sprite = self.find_sprite_at_position(self.all_plants, position)
-        if sprite:
-            return PLANTS_DATA[sprite.key]["Name"]
-        return None
-
     def draw_text_with_frame(self, text, position, font, text_color, draw_frame=True):
         text_surface = font.render(text, True, text_color)
         text_rect = text_surface.get_rect()
@@ -220,6 +214,20 @@ class Level:
                     plant.update()
                     d = plant.auto_collect()
                     self.money += d[0]
+                    
+                    # Update the dataFile with auto-harvest information
+                    name = PLANTS_DATA[plant.key]["Name"]
+                    if self.dataFile.data.get(f"{self.time}") is None:
+                        self.dataFile.data[f"{self.time}"] = {"harvest": {}}
+                    if self.dataFile.data[f"{self.time}"].get("harvest") is None:
+                        self.dataFile.data[f"{self.time}"]["harvest"] = {}
+                    if name in self.dataFile.data[f"{self.time}"]["harvest"].keys():
+                        self.dataFile.data[f"{self.time}"]["harvest"][name] += d[0]
+                    else:
+                        self.dataFile.data[f"{self.time}"]["harvest"][name] = d[0]
+                    self.dataFile.data[f"{self.time}"]["harvest"]["money"] = self.money
+                    self.dataFile.update()
+
                     if d[1] == 0:
                         pos = (pos[0] // SQUARE_SIZE, pos[1] // SQUARE_SIZE + 1)
                         self.mark_square(pos[1], pos[0], 0)
@@ -236,15 +244,6 @@ class Level:
         # Display crop name
         crop_name = self.get_crop_name_by_index()
         self.draw_text_with_frame(crop_name, (85, 75), self.small_font, (0, 0, 0))
-
-        # Display crop name on hover
-        mouse_pos = pygame.mouse.get_pos()
-        hovered_row = mouse_pos[1] // SQUARE_SIZE
-        hovered_col = mouse_pos[0] // SQUARE_SIZE
-        hovered_pos = (hovered_col * SQUARE_SIZE, (hovered_row - 1) * SQUARE_SIZE)
-        hovered_crop_name = self.get_crop_name_at_position(hovered_pos)
-        if not hovered_crop_name:
-            self.draw_text_with_frame(hovered_crop_name, (hovered_pos[0] + SQUARE_SIZE, hovered_pos[1]), self.small_font, (0, 0, 0), draw_frame=False)
 
     def menu(self):
         if self.hasData:
