@@ -27,15 +27,30 @@ class Menu:
         pygame.mixer.music.set_volume(settings.volume / 100.0)  
 
         # Load background image using a relative path
-        image_path = os.path.join(os.path.dirname(__file__), '..', 'graphics', 'Tiles', 'map.png')
+        image_path = os.path.join(os.path.dirname(__file__), '..', 'graphics', 'Tiles', 'wallpaper.jpg')
         print(f"Loading background image from: {image_path}")  
         if not os.path.exists(image_path):
             print(f"Error: The file {image_path} does not exist.")
         self.background = pygame.image.load(image_path)
         self.background = pygame.transform.scale(self.background, (WIDTH, HEIGHT))
 
+        # Load cloud image
+        cloud_path = os.path.join(os.path.dirname(__file__), '..', 'graphics', 'Tiles', 'cloud.png')
+        self.cloud = pygame.image.load(cloud_path)
+        self.cloud = pygame.transform.scale(self.cloud, (100, 50))  # Adjust the size as needed
+
+        # Initialize clouds
+        self.clouds = [
+            {"x": -100, "y": HEIGHT // 10, "speed": 0.7},
+            {"x": -200, "y": HEIGHT // 8, "speed": 0.5},
+            {"x": -300, "y": HEIGHT // 6, "speed": 0.6},
+            {"x": -400, "y": HEIGHT // 5, "speed": 0.4},
+            {"x": -500, "y": HEIGHT // 4, "speed": 0.5},
+        ]
+
     def display_menu(self):
         self.screen.blit(self.background, (0, 0))  
+        
         # Render the title with shadow
         title_text = self.title_font.render("Farming Simulator", True, (0, 0, 0))
         title_rect = title_text.get_rect(center=(WIDTH // 2 + 2, HEIGHT // 4 + 2))
@@ -54,6 +69,13 @@ class Menu:
             text = self.font.render(option, True, color)
             rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + i * 100))
             self.screen.blit(text, rect)
+
+        # Animate the clouds
+        for cloud in self.clouds:
+            cloud["x"] += cloud["speed"]  # Move the cloud to the right
+            if cloud["x"] > WIDTH:
+                cloud["x"] = -100  # Reset position if it goes off-screen
+            self.screen.blit(self.cloud, (cloud["x"], cloud["y"]))
         
         pygame.display.flip()  
 
@@ -92,7 +114,7 @@ class SettingsMenu:
         self.selected_option = 0
 
         # Load background image using a relative path
-        image_path = os.path.join(os.path.dirname(__file__), '..', 'graphics', 'Tiles', 'map.png')
+        image_path = os.path.join(os.path.dirname(__file__), '..', 'graphics', 'Tiles', 'wallpaper.jpg')
         print(f"Loading background image from: {image_path}")  
         if not os.path.exists(image_path):
             print(f"Error: The file {image_path} does not exist.")
