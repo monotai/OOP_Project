@@ -48,6 +48,7 @@ class Game:
     def run_settings(self):
         print("Settings menu...")
         font = pygame.font.Font(None, 36)
+        header_font = pygame.font.Font(None, 40)
         
         # Access player data from the level instance
         crop_data = {}
@@ -71,13 +72,32 @@ class Game:
                 else:
                     print(f"No harvest data for key: {key}")  # Debug print
         
-        # Render the player data as text
+        # Render the player data as a table
         texts = []
-        y_offset = -40
+        y_offset = 100
+        header_text = header_font.render('Crop Data', True, (255, 255, 255))
+        header_rect = header_text.get_rect(center=(self.screen.get_width() // 2, 50))
+        texts.append((header_text, header_rect))
+        table_headers = ['Crop', 'Seeds Planted', 'Price Harvested']
+        header_x_positions = [self.screen.get_width() // 4, self.screen.get_width() // 2, 3 * self.screen.get_width() // 4]
+        for i, header in enumerate(table_headers):
+            header_text = font.render(header, True, (255, 255, 255))
+            header_rect = header_text.get_rect(center=(header_x_positions[i], y_offset))
+            texts.append((header_text, header_rect))
+        y_offset += 40
         for crop, data in crop_data.items():
-            crop_text = font.render(f'Crop: {crop}, Seeds Planted: {data["seeds_planted"]}, Price Harvested: ${data["price_harvested"]}', True, (255, 255, 255))
-            crop_rect = crop_text.get_rect(center=(self.screen.get_width() // 2, self.screen.get_height() // 2 + y_offset))
+            crop_text = font.render(crop, True, (255, 255, 255))
+            crop_rect = crop_text.get_rect(center=(self.screen.get_width() // 4, y_offset))
             texts.append((crop_text, crop_rect))
+
+            seeds_text = font.render(str(data["seeds_planted"]), True, (255, 255, 255))
+            seeds_rect = seeds_text.get_rect(center=(self.screen.get_width() // 2, y_offset))
+            texts.append((seeds_text, seeds_rect))
+
+            price_text = font.render(f'${data["price_harvested"]}', True, (255, 255, 255))
+            price_rect = price_text.get_rect(center=(3 * self.screen.get_width() // 4, y_offset))
+            texts.append((price_text, price_rect))
+
             y_offset += 40
 
         scroll_offset = 0
@@ -91,9 +111,9 @@ class Game:
                     if event.key == pygame.K_ESCAPE:
                         return  # Return to the main menu
                     elif event.key == pygame.K_UP:
-                        scroll_offset += 5  # Scroll up
+                        scroll_offset += 3  # Scroll up
                     elif event.key == pygame.K_DOWN:
-                        scroll_offset -= 5  # Scroll down
+                        scroll_offset -= 3  # Scroll down
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if event.button == 4:  # Mouse wheel up
                         scroll_offset += 5
