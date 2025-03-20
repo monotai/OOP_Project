@@ -80,6 +80,8 @@ class Game:
             texts.append((crop_text, crop_rect))
             y_offset += 40
 
+        scroll_offset = 0
+
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -88,9 +90,19 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         return  # Return to the main menu
+                    elif event.key == pygame.K_UP:
+                        scroll_offset += 5  # Scroll up
+                    elif event.key == pygame.K_DOWN:
+                        scroll_offset -= 5  # Scroll down
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 4:  # Mouse wheel up
+                        scroll_offset += 5
+                    elif event.button == 5:  # Mouse wheel down
+                        scroll_offset -= 5
 
             self.screen.fill((0, 0, 0))  
             for text, rect in texts:
+                rect.y += scroll_offset
                 self.screen.blit(text, rect)  # Draw the crop data text
             pygame.display.flip()  
             self.clock.tick(60)  
