@@ -5,210 +5,137 @@
         }
     },
     "1": {
-        "harvest": {
-            "Parsnip Seeds": 0,
-            "money": 0
-        },
         "plant": {
             "Parsnip Seeds": 1
-        }
-    },
-    "2": {
-        "harvest": {
-            "Parsnip Seeds": 0,
-            "money": 0
-        },
-        "plant": {
-            "Parsnip Seeds": 1
-        }
-    },
-    "3": {
-        "harvest": {
-            "Parsnip Seeds": 0,
-            "money": 0
-        }
-    },
-    "4": {
-        "harvest": {
-            "Parsnip Seeds": 0,
-            "money": 0
         }
     },
     "5": {
         "harvest": {
-            "Parsnip Seeds": 0,
+            "Parsnip Seeds": 35,
             "money": 0
-        }
-    },
-    "6": {
-        "harvest": {
-            "Parsnip Seeds": 35,
-            "money": 35
-        }
-    },
-    "7": {
-        "harvest": {
-            "Parsnip Seeds": 35,
-            "money": 70
         }
     },
     "8": {
         "harvest": {
             "Parsnip Seeds": 35,
-            "money": 105
+            "money": 35
         },
         "plant": {
-            "Potato Seeds": 1
+            "Bean Starter": 1
         }
     },
     "9": {
-        "harvest": {
-            "Potato Seeds": 0,
-            "money": 105
-        },
         "plant": {
-            "Potato Seeds": 2
-        }
-    },
-    "10": {
-        "harvest": {
-            "Potato Seeds": 0,
-            "money": 105
-        },
-        "plant": {
-            "Potato Seeds": 1
-        }
-    },
-    "11": {
-        "harvest": {
-            "Potato Seeds": 0,
-            "money": 105
-        }
-    },
-    "12": {
-        "harvest": {
-            "Potato Seeds": 0,
-            "money": 105
-        }
-    },
-    "13": {
-        "harvest": {
-            "Potato Seeds": 0,
-            "money": 105
-        }
-    },
-    "14": {
-        "harvest": {
-            "Potato Seeds": 80,
-            "money": 185
-        }
-    },
-    "15": {
-        "harvest": {
-            "Potato Seeds": 160,
-            "money": 345
-        }
-    },
-    "16": {
-        "harvest": {
-            "Potato Seeds": 80,
-            "money": 425
-        },
-        "plant": {
-            "Garlic Seeds": 1
-        }
-    },
-    "17": {
-        "harvest": {
-            "Garlic Seeds": 0,
-            "money": 425
-        },
-        "plant": {
-            "Garlic Seeds": 1
-        }
-    },
-    "18": {
-        "harvest": {
-            "Garlic Seeds": 0,
-            "money": 425
+            "Bean Starter": 2
         }
     },
     "19": {
-        "harvest": {
-            "Garlic Seeds": 0,
-            "money": 425
-        }
-    },
-    "20": {
-        "harvest": {
-            "Garlic Seeds": 0,
-            "money": 425
+        "plant": {
+            "Bean Starter": 1
         }
     },
     "21": {
-        "harvest": {
-            "Garlic Seeds": 0,
-            "money": 425
-        }
-    },
-    "22": {
-        "harvest": {
-            "Garlic Seeds": 60,
-            "money": 485
+        "plant": {
+            "Bean Starter": 2
         }
     },
     "23": {
         "harvest": {
-            "Garlic Seeds": 60,
-            "money": 545
-        },
-        "plant": {
-            "Garlic Seeds": 1
+            "Bean Starter": 40,
+            "money": 70
         }
     },
     "24": {
         "harvest": {
-            "Garlic Seeds": 0,
-            "money": 545
-        },
-        "plant": {
-            "Garlic Seeds": 1
+            "Bean Starter": 40,
+            "money": 110
         }
     },
     "25": {
         "harvest": {
-            "Garlic Seeds": 0,
-            "money": 545
+            "Bean Starter": 40,
+            "money": 150
         }
     },
-    "26": {
+    "31": {
         "harvest": {
-            "Garlic Seeds": 0,
-            "money": 545
+            "Bean Starter": 80,
+            "money": 230
         }
     },
-    "27": {
+    "32": {
         "harvest": {
-            "Garlic Seeds": 0,
-            "money": 545
+            "Bean Starter": 40,
+            "money": 270
         }
     },
-    "28": {
+    "35": {
         "harvest": {
-            "Garlic Seeds": 0,
-            "money": 545
+            "Bean Starter": 80,
+            "money": 350
         }
     },
-    "29": {
+    "36": {
         "harvest": {
-            "Garlic Seeds": 60,
-            "money": 605
+            "Bean Starter": 40,
+            "money": 390
         }
     },
-    "30": {
+    "37": {
         "harvest": {
-            "Garlic Seeds": 60,
-            "money": 665
+            "Bean Starter": 80,
+            "money": 470
+        }
+    },
+    "38": {
+        "harvest": {
+            "Bean Starter": 40,
+            "money": 510
+        }
+    },
+    "41": {
+        "harvest": {
+            "Bean Starter": 80,
+            "money": 590
+        }
+    },
+    "42": {
+        "harvest": {
+            "Bean Starter": 40,
+            "money": 630
+        }
+    },
+    "44": {
+        "harvest": {
+            "Bean Starter": 40,
+            "money": 670
+        }
+    },
+    "45": {
+        "harvest": {
+            "Bean Starter": 80,
+            "money": 750
+        },
+        "plant": {
+            "Hops Starter": 1
+        }
+    },
+    "58": {
+        "harvest": {
+            "Hops Starter": 25,
+            "money": 790
+        }
+    },
+    "60": {
+        "harvest": {
+            "Hops Starter": 25,
+            "money": 815
+        }
+    },
+    "62": {
+        "harvest": {
+            "Hops Starter": 25,
+            "money": 840
         }
     }
 }
