@@ -1,30 +1,57 @@
 import pygame
 from pygame import mixer
-
 from setting import *
 from sprites import *
 from t import Timer
 
-class Level:
+class BaseLevel:
     def __init__(self):
         self.surface = pygame.display.get_surface()
-
         self.all_plants = pygame.sprite.Group()
-
         self.center = (self.surface.get_width() // 2, self.surface.get_height() // 2)
+        self.font = pygame.font.Font(None, 36)
+        self.small_font = pygame.font.Font(None, 24)  # Smaller font for crop names
 
+    def draw_text_with_frame(self, text, position, font, text_color, draw_frame=True):
+        text_surface = font.render(text, True, text_color)
+        text_rect = text_surface.get_rect()
+        frame_rect = self.block_image.get_rect()
+
+        # Scale the frame to fit the text
+        frame_rect.width = text_rect.width + 70  # Increase the width
+        frame_rect.height = text_rect.height + 20
+        frame_image = pygame.transform.scale(self.block_image, (frame_rect.width, frame_rect.height))
+
+        # Position the text and frame to the top right of the crop
+        frame_rect.topleft = (position[0], position[1] - frame_rect.height - 30)
+        text_rect.center = frame_rect.center
+
+        if draw_frame:
+            self.surface.blit(frame_image, frame_rect)
+        self.surface.blit(text_surface, text_rect)
+
+class Level(BaseLevel):
+    def __init__(self):
+        super().__init__()
         self.plantNum = 0
         self.last_key_time = 0
         self.key_cooldown = 200  # milliseconds
-
         self.timer = Timer(1000)
         self.timer.activate()
         self.mouse_pressed = False
-
         self.board = BOARD
-
-        self.font = pygame.font.Font(None, 36)
-        self.small_font = pygame.font.Font(None, 24)  # Smaller font for crop names
+        self.money = 0
+        self.menuMode = False
+        self.menuNum = 0
+        self.all_boxs = pygame.sprite.Group()
+        self.contain = Container(self.all_boxs, (0, 0), (500, 500), (255, 255, 255))
+        self.contain.set_center(self.center)
+        self.contain.create_child((500, 200), (255, 0, 0))
+        self.contain.create_child((500, 200), (0, 255, 0))
+        self.contain.create_child((500, 200), (0, 0, 255))
+        self.hasData = False
+        self.time = 0
+        self.dataFile = FileJson('../data/Plant_Data.json')
 
         pygame.mixer.music.load('../audio/best_music.mp3')
         pygame.mixer.music.set_volume(0.5)
@@ -36,27 +63,9 @@ class Level:
         self.hoeSound = pygame.mixer.Sound('../audio/hoe.wav')
         self.hoeSound.set_volume(0.1)
 
-        self.money = 0
-
         # Load block image for frame
         self.block_image = pygame.image.load('../graphics/Other/block.png')
         self.block_image = pygame.transform.scale(self.block_image, (150, 50))
-
-        # test menu
-        self.font = pygame.font.Font(None, 36)
-        self.menuMode = False
-        self.menuNum = 0
-        self.all_boxs = pygame.sprite.Group()
-        self.contain = Container(self.all_boxs, (0, 0), (500, 500), (255, 255, 255))
-        self.contain.set_center(self.center)
-        self.contain.create_child((500, 200), (255, 0, 0))
-        self.contain.create_child((500, 200), (0, 255, 0))
-        self.contain.create_child((500, 200), (0, 0, 255))
-
-        # work with file
-        self.hasData = False
-        self.time = 0
-        self.dataFile = FileJson('../data/Plant_Data.json')
 
     def mark_square(self, row, col, player):
         self.board[row][col] = player
@@ -81,24 +90,6 @@ class Level:
 
     def get_crop_name_by_index(self):
         return PLANTS_DATA[self.get_key_by_index()]["Name"]
-
-    def draw_text_with_frame(self, text, position, font, text_color, draw_frame=True):
-        text_surface = font.render(text, True, text_color)
-        text_rect = text_surface.get_rect()
-        frame_rect = self.block_image.get_rect()
-
-        # Scale the frame to fit the text
-        frame_rect.width = text_rect.width + 70  # Increase the width
-        frame_rect.height = text_rect.height + 20
-        frame_image = pygame.transform.scale(self.block_image, (frame_rect.width, frame_rect.height))
-
-        # Position the text and frame to the top right of the crop
-        frame_rect.topleft = (position[0], position[1] - frame_rect.height - 30)
-        text_rect.center = frame_rect.center
-
-        if draw_frame:
-            self.surface.blit(frame_image, frame_rect)
-        self.surface.blit(text_surface, text_rect)
 
     def input(self):
         keys = pygame.key.get_pressed()
