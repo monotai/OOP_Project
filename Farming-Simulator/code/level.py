@@ -166,6 +166,7 @@ class Level:
                     if sprite is not None:
                         if sprite.is_harvest():
                             # harvest to file
+                            name = PLANTS_DATA[sprite.key]["Name"]
                             if self.dataFile.data.get(f"{self.time}") is None:
                                 self.dataFile.data[f"{self.time}"] = {"harvest": {}}
                                 self.dataFile.data[f"{self.time}"]["harvest"][name] = sprite.harvestPrice

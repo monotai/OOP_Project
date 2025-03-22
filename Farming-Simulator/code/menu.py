@@ -172,14 +172,21 @@ class SoundMenu:
     def display_menu(self):
         self.screen.blit(self.background, (0, 0))  # Display the background image
 
-        # Render the title
+        # Render the title with shadow
+        title_text = self.title_font.render("Sound Settings", True, (0, 0, 0))
+        title_rect = title_text.get_rect(center=(WIDTH // 2 + 2, HEIGHT // 4 + 2))
+        self.screen.blit(title_text, title_rect)
         title_text = self.title_font.render("Sound Settings", True, (255, 255, 255))
         title_rect = title_text.get_rect(center=(WIDTH // 2, HEIGHT // 4))
         self.screen.blit(title_text, title_rect)
 
-        # Render the sound options
+        # Render the sound options with shadow
         for i, option in enumerate(self.options):
             color = (255, 0, 0) if i == self.selected_option else (255, 255, 255)
+            shadow_color = (0, 0, 0)
+            text = self.font.render(option, True, shadow_color)
+            rect = text.get_rect(center=(WIDTH // 2 + 2, HEIGHT // 2 + i * 100 + 2))
+            self.screen.blit(text, rect)
             text = self.font.render(option, True, color)
             rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + i * 100))
             self.screen.blit(text, rect)
@@ -226,14 +233,21 @@ class FPSMenu:
     def display_menu(self):
         self.screen.blit(self.background, (0, 0))  # Display the background image
 
-        # Render the title
+        # Render the title with shadow
+        title_text = self.title_font.render("FPS Settings", True, (0, 0, 0))
+        title_rect = title_text.get_rect(center=(WIDTH // 2 + 2, HEIGHT // 4 + 2))
+        self.screen.blit(title_text, title_rect)
         title_text = self.title_font.render("FPS Settings", True, (255, 255, 255))
         title_rect = title_text.get_rect(center=(WIDTH // 2, HEIGHT // 4))
         self.screen.blit(title_text, title_rect)
 
-        # Render the FPS options
+        # Render the FPS options with shadow
         for i, option in enumerate(self.options):
             color = (255, 0, 0) if i == self.selected_option else (255, 255, 255)
+            shadow_color = (0, 0, 0)
+            text = self.font.render(option, True, shadow_color)
+            rect = text.get_rect(center=(WIDTH // 2 + 2, HEIGHT // 2 + i * 100 + 2))
+            self.screen.blit(text, rect)
             text = self.font.render(option, True, color)
             rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + i * 100))
             self.screen.blit(text, rect)

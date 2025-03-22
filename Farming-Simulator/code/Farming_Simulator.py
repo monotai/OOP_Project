@@ -61,6 +61,11 @@ class Game:
         background = pygame.image.load(image_path)
         background = pygame.transform.scale(background, (WIDTH, HEIGHT))
         
+        # Create a semi-transparent overlay
+        overlay = pygame.Surface((WIDTH, HEIGHT))
+        overlay.set_alpha(128)  # Set transparency level (0-255)
+        overlay.fill((0, 0, 0))  # Fill with black color
+        
         # Access player data from the level instance
         crop_data = {}
         if self.level.dataFile.data:
@@ -113,6 +118,23 @@ class Game:
                 y_offset += 40
             return texts
 
+        def update_crop_data():
+            crop_data.clear()
+            if self.level.dataFile.data:
+                for key in self.level.dataFile.data:
+                    if "plant" in self.level.dataFile.data[key]:
+                        for crop, amount in self.level.dataFile.data[key]["plant"].items():
+                            if crop not in crop_data:
+                                crop_data[crop] = {"seeds_planted": 0, "price_harvested": 0}
+                            crop_data[crop]["seeds_planted"] += amount
+                    if "harvest" in self.level.dataFile.data[key]:
+                        for crop, harvested_price in self.level.dataFile.data[key]["harvest"].items():
+                            if crop == "money":
+                                continue  # Skip the "money" crop type
+                            if crop not in crop_data:
+                                crop_data[crop] = {"seeds_planted": 0, "price_harvested": 0}
+                            crop_data[crop]["price_harvested"] += harvested_price
+
         texts = render_crop_data()
         scroll_offset = 0
 
@@ -124,20 +146,27 @@ class Game:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_ESCAPE:
                         return  # Return to the main menu
-                    elif event.key == pygame.K_UP:
-                        scroll_offset += 3  # Scroll up
                     elif event.key == pygame.K_DOWN:
-                        scroll_offset -= 3  # Scroll down
+                        scroll_offset += 10  # Scroll down
+                    elif event.key == pygame.K_UP:
+                        scroll_offset -= 10  # Scroll up
+                        if scroll_offset < 0:
+                            scroll_offset = 0  # Prevent scrolling above the crop data
                 elif event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 4:  # Mouse wheel up
-                        scroll_offset += 5
-                    elif event.button == 5:  # Mouse wheel down
-                        scroll_offset -= 5
+                    if event.button == 5:  # Mouse wheel down
+                        scroll_offset += 10
+                    elif event.button == 4:  # Mouse wheel up
+                        scroll_offset -= 10
+                        if scroll_offset < 0:
+                            scroll_offset = 0  # Prevent scrolling above the crop data
+
+            update_crop_data()
+            texts = render_crop_data()
 
             self.screen.blit(background, (0, 0))  # Display the background image
+            self.screen.blit(overlay, (0, 0))  # Display the semi-transparent overlay
             for text, rect in texts:
-                original_y = rect.y - scroll_offset  # Calculate the original y position
-                rect.y = original_y + scroll_offset  # Apply the scroll offset
+                rect.y -= scroll_offset  # Apply the scroll offset
                 self.screen.blit(text, rect)  # Draw the crop data text
             pygame.display.flip()  
             self.clock.tick(60)  
