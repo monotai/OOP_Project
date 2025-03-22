@@ -157,27 +157,26 @@ class Level:
                         sprite = self.find_sprite_at_position(self.all_plants, (posSripte[0], posSripte[1] + SQUARE_SIZE))
 
                         if sprite is not None:
-                                plant = Plant(sprite.pos, sprite.key, sprite.frame)
-                                sprite.kill()
-                                self.all_plants.add(plant)
+                            plant = Plant(sprite.pos, sprite.key, sprite.frame)
+                            sprite.kill()
+                            self.all_plants.add(plant)
                 # harvest
                 else:
                     sprite = self.find_sprite_at_position(self.all_plants, posSripte)
                     if sprite is not None:
-                        
                         if sprite.is_harvest():
                             # harvest to file
                             if self.dataFile.data.get(f"{self.time}") is None:
                                 self.dataFile.data[f"{self.time}"] = {"harvest": {}}
-                                self.dataFile.data[f"{self.time}"]["harvest"][name] = 1
+                                self.dataFile.data[f"{self.time}"]["harvest"][name] = sprite.harvestPrice
                             else:
                                 if self.dataFile.data[f"{self.time}"].get("harvest") is None:
                                     self.dataFile.data[f"{self.time}"]["harvest"] = {}
 
                                 if name in self.dataFile.data[f"{self.time}"]["harvest"].keys():
-                                    self.dataFile.data[f"{self.time}"]["harvest"][name] += 1
+                                    self.dataFile.data[f"{self.time}"]["harvest"][name] += sprite.harvestPrice
                                 else:
-                                    self.dataFile.data[f"{self.time}"]["harvest"][name] = 1
+                                    self.dataFile.data[f"{self.time}"]["harvest"][name] = sprite.harvestPrice
 
                             self.dataFile.data[f"{self.time}"]["harvest"]["money"] = self.money
                             self.dataFile.update()
@@ -186,8 +185,8 @@ class Level:
                             self.money += sprite.harvestPrice
 
                             if not sprite.harvest_time():
-                                
                                 self.mark_square(clicked_row, clicked_col, 0)
+                                sprite.kill()
 
             elif not mouse[0]:
                 self.mouse_pressed = False
@@ -210,28 +209,7 @@ class Level:
             if not self.timer.update():
                 self.time += 1
                 for plant in self.all_plants:
-                    pos = plant.pos
                     plant.update()
-                    d = plant.auto_collect()
-                    self.money += d[0]
-                    
-                    # Update the dataFile with auto-harvest information
-                    name = PLANTS_DATA[plant.key]["Name"]
-                    if self.dataFile.data.get(f"{self.time}") is None:
-                        self.dataFile.data[f"{self.time}"] = {"harvest": {}}
-                    if self.dataFile.data[f"{self.time}"].get("harvest") is None:
-                        self.dataFile.data[f"{self.time}"]["harvest"] = {}
-                    if name in self.dataFile.data[f"{self.time}"]["harvest"].keys():
-                        self.dataFile.data[f"{self.time}"]["harvest"][name] += d[0]
-                    else:
-                        self.dataFile.data[f"{self.time}"]["harvest"][name] = d[0]
-                    self.dataFile.data[f"{self.time}"]["harvest"]["money"] = self.money
-                    self.dataFile.update()
-
-                    if d[1] == 0:
-                        pos = (pos[0] // SQUARE_SIZE, pos[1] // SQUARE_SIZE + 1)
-                        self.mark_square(pos[1], pos[0], 0)
-                    plant.already -= 1
                 self.timer.activate()
             self.all_plants.draw(self.surface)
 
@@ -253,5 +231,4 @@ class Level:
 
     def test(self):
         self.all_boxs.update()
-        
         self.all_boxs.draw(self.surface)

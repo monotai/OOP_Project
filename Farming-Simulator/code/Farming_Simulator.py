@@ -1,10 +1,9 @@
+import os
 import pygame
 import sys
-import os
-
 from setting import *
 from level import *
-from menu import Menu
+from menu import Menu, SettingsMenu
 
 class Game:
     def __init__(self):
@@ -26,7 +25,7 @@ class Game:
             if choice == "play":
                 self.play_game()
             elif choice == "settings":
-                self.run_settings()
+                self.run_settings_menu()
             else:
                 print("Unknown choice")  
 
@@ -45,10 +44,22 @@ class Game:
             pygame.display.update()
             self.clock.tick(FPS)
 
+    def run_settings_menu(self):
+        settings_menu = SettingsMenu(self.screen)
+        settings_menu.run()
+
     def run_settings(self):
         print("Settings menu...")
         font = pygame.font.Font(None, 36)
         header_font = pygame.font.Font(None, 40)
+        
+        # Load background image using a relative path
+        image_path = os.path.join(os.path.dirname(__file__), '..', 'graphics', 'Tiles', 'wallpaper.jpg')
+        print(f"Loading background image from: {image_path}")  
+        if not os.path.exists(image_path):
+            print(f"Error: The file {image_path} does not exist.")
+        background = pygame.image.load(image_path)
+        background = pygame.transform.scale(background, (WIDTH, HEIGHT))
         
         # Access player data from the level instance
         crop_data = {}
@@ -73,33 +84,36 @@ class Game:
                     print(f"No harvest data for key: {key}")  # Debug print
         
         # Render the player data as a table
-        texts = []
-        y_offset = 100
-        header_text = header_font.render('Crop Data', True, (255, 255, 255))
-        header_rect = header_text.get_rect(center=(self.screen.get_width() // 2, 50))
-        texts.append((header_text, header_rect))
-        table_headers = ['Crop', 'Seeds Planted', 'Price Harvested']
-        header_x_positions = [self.screen.get_width() // 4, self.screen.get_width() // 2, 3 * self.screen.get_width() // 4]
-        for i, header in enumerate(table_headers):
-            header_text = font.render(header, True, (255, 255, 255))
-            header_rect = header_text.get_rect(center=(header_x_positions[i], y_offset))
+        def render_crop_data():
+            texts = []
+            y_offset = 100
+            header_text = header_font.render('Crop Data', True, (255, 255, 255))
+            header_rect = header_text.get_rect(center=(self.screen.get_width() // 2, 50))
             texts.append((header_text, header_rect))
-        y_offset += 40
-        for crop, data in crop_data.items():
-            crop_text = font.render(crop, True, (255, 255, 255))
-            crop_rect = crop_text.get_rect(center=(self.screen.get_width() // 4, y_offset))
-            texts.append((crop_text, crop_rect))
-
-            seeds_text = font.render(str(data["seeds_planted"]), True, (255, 255, 255))
-            seeds_rect = seeds_text.get_rect(center=(self.screen.get_width() // 2, y_offset))
-            texts.append((seeds_text, seeds_rect))
-
-            price_text = font.render(f'${data["price_harvested"]}', True, (255, 255, 255))
-            price_rect = price_text.get_rect(center=(3 * self.screen.get_width() // 4, y_offset))
-            texts.append((price_text, price_rect))
-
+            table_headers = ['Crop', 'Seeds Planted', 'Price Harvested']
+            header_x_positions = [self.screen.get_width() // 4, self.screen.get_width() // 2, 3 * self.screen.get_width() // 4]
+            for i, header in enumerate(table_headers):
+                header_text = font.render(header, True, (255, 255, 255))
+                header_rect = header_text.get_rect(center=(header_x_positions[i], y_offset))
+                texts.append((header_text, header_rect))
             y_offset += 40
+            for crop, data in crop_data.items():
+                crop_text = font.render(crop, True, (255, 255, 255))
+                crop_rect = crop_text.get_rect(center=(self.screen.get_width() // 4, y_offset))
+                texts.append((crop_text, crop_rect))
 
+                seeds_text = font.render(str(data["seeds_planted"]), True, (255, 255, 255))
+                seeds_rect = seeds_text.get_rect(center=(self.screen.get_width() // 2, y_offset))
+                texts.append((seeds_text, seeds_rect))
+
+                price_text = font.render(f'${data["price_harvested"]}', True, (255, 255, 255))
+                price_rect = price_text.get_rect(center=(3 * self.screen.get_width() // 4, y_offset))
+                texts.append((price_text, price_rect))
+
+                y_offset += 40
+            return texts
+
+        texts = render_crop_data()
         scroll_offset = 0
 
         while True:
@@ -120,9 +134,10 @@ class Game:
                     elif event.button == 5:  # Mouse wheel down
                         scroll_offset -= 5
 
-            self.screen.fill((0, 0, 0))  
+            self.screen.blit(background, (0, 0))  # Display the background image
             for text, rect in texts:
-                rect.y += scroll_offset
+                original_y = rect.y - scroll_offset  # Calculate the original y position
+                rect.y = original_y + scroll_offset  # Apply the scroll offset
                 self.screen.blit(text, rect)  # Draw the crop data text
             pygame.display.flip()  
             self.clock.tick(60)  
