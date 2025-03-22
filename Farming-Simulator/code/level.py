@@ -206,7 +206,7 @@ class Level(BaseLevel):
             self.all_plants.draw(self.surface)
 
         self.surface.blit(BLOCK, (0, 0))
-        self.money_text = self.font.render(f'{self.money}', True, (255, 255, 255))
+        self.money_text = self.font.render(f'{self.money:.2f}', True, (255, 255, 255))
         self.money_rect = self.money_text.get_rect(topright=(self.surface.get_width() - 10, 10))
         self.surface.blit(self.money_text, self.money_rect)
         self.surface.blit(SEED[self.get_key_by_index()][0], (10, 11))

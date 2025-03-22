@@ -47,7 +47,6 @@ class Game(BaseGame):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    self.save_game_state()  # Save game state on quit
                     pygame.quit()
                     sys.exit()
                 elif event.type == pygame.KEYDOWN:
@@ -125,7 +124,7 @@ class Game(BaseGame):
                 seeds_rect = seeds_text.get_rect(center=(self.get_screen().get_width() // 2, y_offset))
                 texts.append((seeds_text, seeds_rect))
 
-                price_text = font.render(f'${data["price_harvested"]}', True, (255, 255, 255))
+                price_text = font.render(f'${data["price_harvested"]:.2f}', True, (255, 255, 255))
                 price_rect = price_text.get_rect(center=(3 * self.get_screen().get_width() // 4, y_offset))
                 texts.append((price_text, price_rect))
 
