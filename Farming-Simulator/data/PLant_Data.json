@@ -1,141 +1,307 @@
 {
     "0": {
         "plant": {
-            "Parsnip Seeds": 1
+            "Cactus Seeds": 1
         }
     },
-    "1": {
+    "3": {
         "plant": {
-            "Parsnip Seeds": 1
-        }
-    },
-    "5": {
-        "harvest": {
-            "Parsnip Seeds": 35,
-            "money": 0
+            "Cactus Seeds": 1
         }
     },
     "8": {
-        "harvest": {
-            "Parsnip Seeds": 35,
-            "money": 35
-        },
         "plant": {
-            "Bean Starter": 1
+            "Cactus Seeds": 1
         }
     },
     "9": {
         "plant": {
-            "Bean Starter": 2
+            "Cactus Seeds": 2
         }
     },
-    "19": {
+    "10": {
         "plant": {
-            "Bean Starter": 1
+            "Cactus Seeds": 1
         }
     },
-    "21": {
+    "11": {
         "plant": {
-            "Bean Starter": 2
+            "Cactus Seeds": 1
+        }
+    },
+    "15": {
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
     "23": {
         "harvest": {
-            "Bean Starter": 40,
-            "money": 70
+            "Cactus Seeds": 2.5,
+            "money": 0
         }
     },
-    "24": {
+    "26": {
         "harvest": {
-            "Bean Starter": 40,
-            "money": 110
+            "Cactus Seeds": 2.5,
+            "money": 2.5
         }
     },
-    "25": {
+    "29": {
         "harvest": {
-            "Bean Starter": 40,
-            "money": 150
+            "Cactus Seeds": 2.5,
+            "money": 5.0
         }
     },
-    "31": {
-        "harvest": {
-            "Bean Starter": 80,
-            "money": 230
-        }
-    },
-    "32": {
-        "harvest": {
-            "Bean Starter": 40,
-            "money": 270
-        }
-    },
-    "35": {
-        "harvest": {
-            "Bean Starter": 80,
-            "money": 350
+    "30": {
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
     "36": {
-        "harvest": {
-            "Bean Starter": 40,
-            "money": 390
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
     "37": {
-        "harvest": {
-            "Bean Starter": 80,
-            "money": 470
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
     "38": {
-        "harvest": {
-            "Bean Starter": 40,
-            "money": 510
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "39": {
+        "plant": {
+            "Cactus Seeds": 2
+        }
+    },
+    "40": {
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
     "41": {
-        "harvest": {
-            "Bean Starter": 80,
-            "money": 590
-        }
-    },
-    "42": {
-        "harvest": {
-            "Bean Starter": 40,
-            "money": 630
-        }
-    },
-    "44": {
-        "harvest": {
-            "Bean Starter": 40,
-            "money": 670
-        }
-    },
-    "45": {
-        "harvest": {
-            "Bean Starter": 80,
-            "money": 750
-        },
         "plant": {
-            "Hops Starter": 1
+            "Cactus Seeds": 2
         }
     },
-    "58": {
-        "harvest": {
-            "Hops Starter": 25,
-            "money": 790
+    "43": {
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
-    "60": {
-        "harvest": {
-            "Hops Starter": 25,
-            "money": 815
+    "55": {
+        "plant": {
+            "Cactus Seeds": 1
         }
     },
-    "62": {
+    "59": {
         "harvest": {
-            "Hops Starter": 25,
-            "money": 840
+            "Cactus Seeds": 2.5,
+            "money": 7.5
+        }
+    },
+    "63": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 10.0
+        }
+    },
+    "66": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 12.5
+        }
+    },
+    "67": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 15.0
+        }
+    },
+    "70": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 17.5
+        }
+    },
+    "73": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 20.0
+        }
+    },
+    "77": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "78": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "80": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "81": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "82": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "83": {
+        "plant": {
+            "Cactus Seeds": 2
+        }
+    },
+    "84": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "85": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "86": {
+        "plant": {
+            "Cactus Seeds": 2
+        }
+    },
+    "88": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "89": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "90": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "91": {
+        "plant": {
+            "Cactus Seeds": 2
+        }
+    },
+    "121": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "123": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "124": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "125": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "126": {
+        "plant": {
+            "Cactus Seeds": 2
+        }
+    },
+    "127": {
+        "plant": {
+            "Cactus Seeds": 2
+        }
+    },
+    "129": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "130": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "131": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "149": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "150": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 22.5
+        }
+    },
+    "153": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 25.0
+        }
+    },
+    "156": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 27.5
+        }
+    },
+    "161": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 30.0
+        }
+    },
+    "165": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 32.5
+        }
+    },
+    "168": {
+        "harvest": {
+            "Cactus Seeds": 2.5,
+            "money": 35.0
+        }
+    },
+    "172": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "173": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "177": {
+        "plant": {
+            "Cactus Seeds": 1
+        }
+    },
+    "178": {
+        "plant": {
+            "Cactus Seeds": 1
         }
     }
 }
