@@ -7,6 +7,7 @@ class Shop:
     def __init__(self):
         self._seed_inventory = self._load_seed_inventory()
         self._harvest_prices = self._load_harvest_prices()
+        self._seed_to_harvest_map = self._map_seed_to_harvest()
 
     def _load_seed_inventory(self):
         seed_inventory = {}
@@ -34,6 +35,23 @@ class Shop:
             return {}
         return harvest_prices
 
+    def _map_seed_to_harvest(self):
+        mapping = {}
+        try:
+            with open("../data/Plant_Stardew.json", "r") as file:
+                data = json.load(file)
+                for crop_id, crop_data in data["Crops"].items():
+                    seed_name = crop_data["Name"]
+                    harvest_name = crop_data["HarvestName"]
+                    mapping[seed_name] = harvest_name
+        except (FileNotFoundError, KeyError):
+            print("Error loading seed-to-harvest mapping.")
+            return {}
+        return mapping
+
+    def get_harvest_name(self, seed_name):
+        return self._seed_to_harvest_map.get(seed_name, seed_name)
+
     def __getitem__(self, item):
         return self._seed_inventory.get(item, None)
 
@@ -45,8 +63,8 @@ class Shop:
         if item in self._seed_inventory:
             total_price = self._seed_inventory[item] * kg
             if money >= total_price:
-                return True, money - total_price  # Successful purchase
-        return False, money  # Not enough money or item not available
+                return True, money - total_price
+        return False, money
 
     def sell(self, item, weight, money):
         if item in self._harvest_prices:
@@ -65,23 +83,31 @@ class Player:
     def buy_item(self, shop, item, kg):
         success, self.money = shop.buy(item, kg, self.money)
         if success:
-            self.inventory[item] = self.inventory.get(item, 0) + kg
-            print(f"Bought {kg}kg of {item}. Remaining money: ${self.money:.2f}")
+            harvest_name = shop.get_harvest_name(item)  
+            self.inventory[harvest_name] = self.inventory.get(harvest_name, 0) + kg
+            print(f"Bought {kg}kg of {item} (harvest: {harvest_name}). Remaining money: ${self.money:.2f}")
         else:
             print("Not enough money or item not available.")
 
     def sell_item(self, shop, item, weight):
-        if item in self.inventory and self.inventory[item] >= weight:
-            success, self.money = shop.sell(item, weight, self.money)
-            if success:
-                self.inventory[item] -= weight
-                if self.inventory[item] == 0:
-                    del self.inventory[item]
-                print(f"Sold {weight}kg of {item}. Money: ${self.money:.2f}")
+        item = item.lower()  # Normalize case
+        inventory_keys = {k.lower(): k for k in self.inventory} 
+
+        if item in inventory_keys:
+            real_name = inventory_keys[item] 
+            if self.inventory[real_name] >= weight:
+                success, self.money = shop.sell(real_name, weight, self.money)
+                if success:
+                    self.inventory[real_name] -= weight
+                    if self.inventory[real_name] == 0:
+                        del self.inventory[real_name]
+                    print(f"Sold {weight}kg of {real_name}. Money: ${self.money:.2f}")
+                else:
+                    print("Sale failed.")
             else:
-                print("Sale failed.")
+                print("Not enough items to sell.")
         else:
-            print("Not enough items to sell or item not in inventory.")
+            print("Item not found in inventory.")
 
 def shop_interface():
     shop = Shop()
@@ -99,7 +125,7 @@ def shop_interface():
 
         if choice == '1':
             print("\n--- Buy Seeds ---")
-            print(shop)  # Display only seed inventory
+            print(shop)
 
             item_to_buy = input("Enter the name of the seed you want to buy: ")
             if item_to_buy in shop._seed_inventory:
@@ -119,17 +145,14 @@ def shop_interface():
             print(player)
 
             item_to_sell = input("Enter the name of the vegetable you want to sell: ")
-            if item_to_sell in player.inventory:
-                try:
-                    weight = float(input(f"Enter the kilograms of {item_to_sell} you want to sell: "))
-                    if weight > 0:
-                        player.sell_item(shop, item_to_sell, weight)
-                    else:
-                        print("Invalid quantity. Please enter a positive number.")
-                except ValueError:
-                    print("Invalid input. Please enter a number.")
-            else:
-                print("Item not found in inventory.")
+            try:
+                weight = float(input(f"Enter the kilograms of {item_to_sell} you want to sell: "))
+                if weight > 0:
+                    player.sell_item(shop, item_to_sell, weight)
+                else:
+                    print("Invalid quantity. Please enter a positive number.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
 
         elif choice == '3':
             print("\n--- Player Info ---")
